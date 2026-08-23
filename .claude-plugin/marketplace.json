@@ -1,0 +1,29 @@
+{
+  "name": "agent-foundry",
+  "owner": "Cpano98",
+  "description": "An open-source marketplace and library of reusable AI prompts, skills, plugins, agents, commands, and workflows.",
+  "version": "0.1.0",
+  "type": "marketplace",
+  "license": "MIT",
+  "homepage": "https://github.com/Cpano98/agent-foundry",
+  "repository": "https://github.com/Cpano98/agent-foundry",
+  "categories": [
+    "ai",
+    "agent",
+    "skills",
+    "prompts",
+    "plugins"
+  ],
+  "compatibility": {
+    "claude-code": ">=1.0.0",
+    "agent-skills": ">=1.0.0"
+  },
+  "plugins": [
+    {
+      "id": "agent-foundry-core",
+      "path": "plugins/agent-foundry-core",
+      "version": "0.1.0",
+      "description": "Core example plugin demonstrating the Agent Foundry packaging model."
+    }
+  ]
+}

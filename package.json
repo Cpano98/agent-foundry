@@ -1,0 +1,11 @@
+{
+  "name": "agent-foundry",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Open-source marketplace and library of reusable AI prompts, skills, plugins, agents, commands, and workflows.",
+  "scripts": {
+    "validate": "node scripts/validate/index.js",
+    "test": "node scripts/validate/index.js",
+    "build": "node scripts/validate/index.js"
+  }
+}
