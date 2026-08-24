@@ -4,6 +4,26 @@ Agent Foundry is an open-source marketplace and library for reusable AI-agent ca
 
 It brings together prompts, Agent Skills, Claude Code plugins, commands, agents, workflows, and templates in one cross-tool ecosystem designed for AI coding assistants.
 
+## Quick install
+
+**Claude Code** — add the marketplace, then install a plugin:
+
+```bash
+/plugin marketplace add Cpano98/agent-foundry
+/plugin install anima-studio@agent-foundry
+```
+
+**Cursor** — open the Skills importer (Agent Skills panel → Import from GitHub) and paste a skill folder's
+GitHub URL, e.g.:
+
+```
+https://github.com/Cpano98/agent-foundry/tree/main/plugins/anima-studio/skills/brand-pipeline
+```
+
+Cursor downloads that skill into your project's or global `.cursor/skills/`. See
+[docs/architecture.md](docs/architecture.md#cursor-discovery) for how Cursor discovery works and why it's a
+per-skill import rather than a marketplace add.
+
 ## Why this exists
 
 AI coding assistants are getting more capable, but reusable assets are still fragmented across tools, repositories, and personal workflows. Agent Foundry gives contributors a single place to package and share portable AI resources that can work across compatible ecosystems.
@@ -43,20 +63,6 @@ This project is intentionally designed for multiple compatible ecosystems rather
 - `templates/` — templates and starter structures
 - `docs/` — contributor and architecture documentation
 - `scripts/validate/` — repository validation logic
-
-## Claude Code installation
-
-Claude Code marketplace installs use the GitHub repo identity configured in the marketplace manifest.
-
-```bash
-/plugin marketplace add Cpano98/agent-foundry
-```
-
-Use the exact GitHub owner/repository identifier that matches the repo configuration.
-
-## Cursor / Agent Skills usage
-
-Cursor can consume Agent Skills resources from compatible GitHub repositories and local directories. The canonical implementation in this repository is the `SKILL.md` based skill layout, which keeps the same content portable across compatible tools.
 
 ## Contributing
 

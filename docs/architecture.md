@@ -40,7 +40,22 @@ Claude Code marketplace entries point to plugin directories, and each plugin may
 
 ## Cursor discovery
 
-Cursor supports the open Agent Skills model and discovers compatible skills from directories such as `.cursor/skills/`, `.agents/skills/`, and other compatible locations. The repository uses the canonical `SKILL.md` pattern so it can be consumed by multiple clients without duplicating the same implementation.
+Cursor supports the open Agent Skills model, but it only auto-scans skills that already live under a
+literally-named `.cursor/skills/`, `.agents/skills/` (or, for compatibility, `.claude/skills/`) directory —
+project-level or global (`~/.cursor/skills/`, etc.). It does **not** scan an arbitrary `skills/` folder at a
+repo root, so this repository's `skills/` and `plugins/*/skills/` directories are not auto-discovered just
+by opening `agent-foundry` in Cursor.
+
+The repository still uses the canonical `SKILL.md` pattern so the same content is portable across clients
+without duplication — getting a skill into Cursor is a one-time consumer-side step, not something this repo
+needs to pre-populate:
+
+- **Import from GitHub** (fastest): in Cursor, open the Skills importer and paste the GitHub URL of the
+  skill's folder (e.g. `https://github.com/Cpano98/agent-foundry/tree/main/plugins/anima-studio/skills/brand-pipeline`).
+  Cursor downloads that folder's `SKILL.md` and any `references/`/`scripts/`/`assets/` into your project's
+  or global `.../skills/` directory.
+- **Manual**: clone this repo and copy (or symlink) the specific skill directory into your own
+  `.cursor/skills/<skill-name>/`.
 
 ## Why avoid duplication
 

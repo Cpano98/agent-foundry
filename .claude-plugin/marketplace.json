@@ -1,6 +1,9 @@
 {
   "name": "agent-foundry",
-  "owner": "Cpano98",
+  "owner": {
+    "name": "Cpano98",
+    "url": "https://github.com/Cpano98"
+  },
   "description": "An open-source marketplace and library of reusable AI prompts, skills, plugins, agents, commands, and workflows.",
   "version": "0.1.0",
   "type": "marketplace",
@@ -20,14 +23,14 @@
   },
   "plugins": [
     {
-      "id": "agent-foundry-core",
-      "path": "plugins/agent-foundry-core",
+      "name": "agent-foundry-core",
+      "source": "./plugins/agent-foundry-core",
       "version": "0.1.0",
       "description": "Core example plugin demonstrating the Agent Foundry packaging model."
     },
     {
-      "id": "anima-studio",
-      "path": "plugins/anima-studio",
+      "name": "anima-studio",
+      "source": "./plugins/anima-studio",
       "version": "0.1.0",
       "description": "A 7-phase brand and product design pipeline orchestrator — discovery through QA-aligned engineering handoff."
     }

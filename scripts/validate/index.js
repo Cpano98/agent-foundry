@@ -93,8 +93,8 @@ if (marketplace) {
   if (!marketplace.name || marketplace.name !== 'agent-foundry') {
     errors.push('Marketplace name must be "agent-foundry".');
   }
-  if (!marketplace.owner || !marketplace.owner.trim()) {
-    errors.push('Marketplace owner is required.');
+  if (!marketplace.owner || !marketplace.owner.name || !marketplace.owner.name.trim()) {
+    errors.push('Marketplace owner.name is required.');
   }
   if (!marketplace.description) {
     errors.push('Marketplace description is required.');

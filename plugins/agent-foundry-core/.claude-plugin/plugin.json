@@ -2,16 +2,13 @@
   "name": "agent-foundry-core",
   "version": "0.1.0",
   "description": "Core example plugin for Agent Foundry.",
-  "author": "Cpano98",
+  "author": {
+    "name": "Cpano98",
+    "url": "https://github.com/Cpano98"
+  },
   "license": "MIT",
   "repository": "https://github.com/Cpano98/agent-foundry",
   "homepage": "https://github.com/Cpano98/agent-foundry",
-  "entry": "./skills/example-skill/SKILL.md",
-  "capabilities": [
-    "skills",
-    "commands",
-    "agents"
-  ],
   "compatibility": {
     "claude-code": ">=1.0.0",
     "agent-skills": ">=1.0.0"
