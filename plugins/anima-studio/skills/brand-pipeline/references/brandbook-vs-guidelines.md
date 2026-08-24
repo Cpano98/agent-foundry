@@ -36,6 +36,16 @@ A Brand Book that also tries to be the technical reference becomes bloated and i
 that also tries to be inspiring becomes vague where it needs to be exact. Phase 5 in this pipeline always
 produces both, as separate artifacts, each optimized for its actual reader.
 
+## In practice: the Brand Book carries a little of both
+
+The distinction above is the *reason* the two deliverables stay separate — it is not a license to make the
+Brand Book text-only. Real studio brand books (the kind a client frames, not just reads) are visual boards
+that show the color system, type specimens, and the mark's clear-space/do's-and-don'ts alongside the
+editorial voice — see `brand-kit-poster-spec.md`. The line that actually matters: the Brand Book never
+*invents* a rule or prohibition — it only *shows*, beautifully, rules that Phase 2/4 (or the project's
+existing spec) already decided. The Web Design System is still the only deliverable precise enough to
+diff code against; the Brand Book's usage guidance is illustrative, not the engineering source of truth.
+
 ## Modern caveat
 
 Static PDF brand books/guidelines go stale fast. Where the target project already has a living spec (e.g.
@@ -43,3 +53,11 @@ Orbita Health's `04-design/design-system/brand.md` + `tokens.md`, marked as the 
 the code), treat that living doc as the Guidelines artifact and keep it current rather than producing a
 parallel PDF. The Brand Book can still be a standalone editorial artifact (e.g. published as an Artifact),
 since it isn't meant to be a spec anyone diffs code against.
+
+**PDF is still a legitimate *derived* export, never the source of truth.** The living Artifact/canvas is
+canonical; a PDF is a convenience snapshot for offline review, a board deck, or a vendor who won't open a
+link — real needs, per the digital-guidelines research this file distills from (`lingoapp.com`: "there IS a
+valid need for a PDF brand book — for quick downloads, board presentations, or offline audits. But they
+shouldn't be your source of truth"). When the user asks for a PDF, produce one (see `pdf-export.md`) — don't
+substitute "you can export that yourself from the canvas" for actually handing them the file, and don't let
+the PDF's existence become an excuse to stop updating the living version when tokens change.

@@ -46,10 +46,17 @@ mockup images.
 
 ### Phase 5 — Standardization ("the Law")
 **Input:** approved Phase 4 mockups.
-**Output:** two distinct artifacts — the **Brand Book** (inspirational, editorial, tells the brand's story;
-see `references/brandbook-vs-guidelines.md` for why this must not collapse into the guidelines doc) and the
-**Web Design System** (design tokens for spacing, color, typography, states — see
-`references/design-tokens-spec.md`).
+**Output:** two distinct artifacts, produced with the `design` skill so they're visual, print-ready
+deliverables rather than plain documents — the **Brand Book** (a dense, agency-grade visual Brand Kit board:
+inspirational in voice, but carrying real color/type specimens, the locked mark's usage rules, and real
+application mockups on one coherent, PDF-exportable board; see `references/brandbook-vs-guidelines.md` for
+why this must not collapse into a component spec, `references/brand-kit-poster-spec.md` for the panel
+taxonomy and quality bar, and `references/brand-book-master-framework.md` for the completeness checklist a
+top-tier brand book reaches) and the **Web Design System** (design tokens for spacing, color, typography,
+states, presented fully styled in the brand's own visual system — see `references/design-tokens-spec.md`).
+Phase 5 also produces real bundled brand assets (`references/pdf-export.md` for PDF/PNG export) and a
+copy-pasteable claude.ai handoff prompt (`references/claude-ai-handoff-prompt.md`) for a higher-fidelity pass
+on the full claude.ai/design product.
 
 ### Phase 6 — Engineering & Implementation ("the Muscle")
 **Input:** the Phase 5 design system.
