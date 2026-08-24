@@ -1,0 +1,19 @@
+{
+  "name": "anima-studio",
+  "version": "0.1.0",
+  "description": "A 7-phase brand and product design pipeline orchestrator — discovery through QA-aligned engineering handoff.",
+  "author": "Cpano98",
+  "license": "MIT",
+  "repository": "https://github.com/Cpano98/agent-foundry",
+  "homepage": "https://github.com/Cpano98/agent-foundry",
+  "entry": "./commands/anima-studio.md",
+  "capabilities": [
+    "skills",
+    "commands",
+    "agents"
+  ],
+  "compatibility": {
+    "claude-code": ">=1.0.0",
+    "agent-skills": ">=1.0.0"
+  }
+}

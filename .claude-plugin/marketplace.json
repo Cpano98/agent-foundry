@@ -24,6 +24,12 @@
       "path": "plugins/agent-foundry-core",
       "version": "0.1.0",
       "description": "Core example plugin demonstrating the Agent Foundry packaging model."
+    },
+    {
+      "id": "anima-studio",
+      "path": "plugins/anima-studio",
+      "version": "0.1.0",
+      "description": "A 7-phase brand and product design pipeline orchestrator — discovery through QA-aligned engineering handoff."
     }
   ]
 }
