@@ -18,6 +18,13 @@ prompt library, an existing moodboard folder). Decided identity elements are **c
 not a draft to silently overwrite. Only propose changing a decided element if the user flags it for
 reconsideration, and say explicitly what you're changing and why.
 
+When the ask is specifically to **potentiate an already-shipped V1 product** — elevate its identity with a
+moodboard/reference images, then prove it with a full landing page and application mockups pulled from the
+product's real screens — point the user at
+`references/rebrand-existing-product-kickoff-prompt.md`. It's a reusable, fill-in-the-blanks kickoff prompt
+for exactly this scenario, kept separate from `references/claude-ai-handoff-prompt.md` (which is a Phase 5
+*output*, not a pipeline input).
+
 ## The seven phases
 
 Each phase ends with an explicit approval checkpoint — do not start the next phase until the user has

@@ -25,6 +25,12 @@ in order, pausing for your explicit approval before each next phase.
   inputs/outputs, and the Brand Book vs. Brand Guidelines distinction). Reusable outside Claude Code.
 - `skills/brand-pipeline/references/` — checklists for Discovery, design tokens, and QA alignment, plus the
   distilled Brand Book vs. Guidelines research.
+- `skills/brand-pipeline/references/rebrand-existing-product-kickoff-prompt.md` — points to the canonical
+  kickoff prompt at `prompts/design/potentiate-brand-and-app-components.md` for the "potentiate an
+  already-shipped V1 product's brand" scenario: moodboard + reference images as Phase 2 input, multiple hi-fi
+  app screen variations exploring named component patterns (circular progress, steppers, etc.) as Phase 3/4,
+  a full marketing landing page as Phase 4 proof, and Phase 5 application mockups pulled from the product's
+  real existing screens instead of invented ones.
 - `agents/anima-strategist.md` — Skill 1, Sr. Strategist (Discovery & Audit)
 - `agents/anima-creative-director.md` — Skill 2, Creative Director (Visual & Verbal Identity)
 - `agents/anima-ux-ui-lead.md` — Skill 3, UX/UI Lead (wireframes → hi-fi via Claude Design)
