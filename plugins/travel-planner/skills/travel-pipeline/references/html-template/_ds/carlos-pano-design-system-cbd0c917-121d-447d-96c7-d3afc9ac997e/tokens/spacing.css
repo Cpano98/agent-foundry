@@ -1,0 +1,26 @@
+/* Derived from the square-canvas layouts: 1080px post, 92px safe margin,
+   600x400 project preview, 5px screenshot radius. */
+:root {
+  --space-1: 5px;
+  --space-2: 10px;
+  --space-3: 13px;
+  --space-4: 20px;
+  --space-5: 26px;
+  --space-6: 30px;
+  --space-7: 40px;
+  --space-8: 60px;
+  --space-9: 92px;
+
+  --canvas-post: 1080px;
+  --canvas-preview-w: 600px;
+  --canvas-preview-h: 400px;
+  --canvas-wide-w: 1920px;
+  --canvas-wide-h: 1080px;
+  --margin-safe: 92px;
+
+  --radius-xs: 2px;
+  --radius-sm: 5px;
+  --radius-lg: 22px;
+  --radius-device: 28px;
+  --radius-full: 50%;
+}

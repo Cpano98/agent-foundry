@@ -33,6 +33,12 @@
       "source": "./plugins/anima-studio",
       "version": "0.1.0",
       "description": "A 7-phase brand and product design pipeline orchestrator — discovery through QA-aligned engineering handoff."
+    },
+    {
+      "name": "travel-planner",
+      "source": "./plugins/travel-planner",
+      "version": "0.1.0",
+      "description": "A 4-phase travel planning pipeline — Research → Itinerary → Budget → HTML Guide — producing a polished, print-ready day-by-day travel guide using Carlos Pano's design system."
     }
   ]
 }

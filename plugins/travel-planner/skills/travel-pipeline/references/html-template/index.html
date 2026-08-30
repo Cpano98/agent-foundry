@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/carlos-pano-design-system-cbd0c917-121d-447d-96c7-d3afc9ac997e/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/carlos-pano-design-system-cbd0c917-121d-447d-96c7-d3afc9ac997e/tokens/colors.css">
+<link rel="stylesheet" href="_ds/carlos-pano-design-system-cbd0c917-121d-447d-96c7-d3afc9ac997e/tokens/typography.css">
+<link rel="stylesheet" href="_ds/carlos-pano-design-system-cbd0c917-121d-447d-96c7-d3afc9ac997e/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/carlos-pano-design-system-cbd0c917-121d-447d-96c7-d3afc9ac997e/tokens/effects.css">
+<link rel="stylesheet" href="_ds/carlos-pano-design-system-cbd0c917-121d-447d-96c7-d3afc9ac997e/styles.css">
+<script src="_ds/carlos-pano-design-system-cbd0c917-121d-447d-96c7-d3afc9ac997e/_ds_bundle.js"></script>
+<style>
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:#0B132B}
+a{color:#5D79FF;transition:opacity .25s cubic-bezier(.4,0,.2,1)}
+a:hover{opacity:.88}
+[data-scroll-x]::-webkit-scrollbar{display:none}
+[data-chip][data-today="true"]{background:#53F3D7 !important;color:#0B132B !important;border-color:#53F3D7 !important}
+[data-nav]:hover{opacity:.88}
+section[data-today="true"]{outline:2px solid #53F3D7}
+a[data-today="true"]{background:#F0FFFB;box-shadow:inset 3px 0 0 #00C1A2;padding-left:8px !important}
+
+</style>
+</helmet>
+<div style="min-height:100vh;background:#0B132B">
+
+<header style="position:sticky;top:0;z-index:40;background:rgba(11,19,43,.97);font-family:Inter,sans-serif">
+  <div style="max-width:940px;margin:0 auto;padding:12px 14px 0;display:flex;align-items:center;justify-content:space-between;gap:12px">
+    <a href="#p01" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff">
+      <span style="font-family:Poppins,sans-serif;font-weight:700;font-size:15px;letter-spacing:-.01em">JAPÓN 2026</span>
+      <span style="font-size:11px;font-weight:500;letter-spacing:.14em;color:#53F3D7">日本</span>
+    </a>
+    <button onClick="{{ goToday }}" style="appearance:none;border:1px solid #53F3D7;background:transparent;color:#53F3D7;cursor:pointer;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;height:32px;padding:0 12px;border-radius:5px;white-space:nowrap">{{ chipLabel }}</button>
+  </div>
+  <div data-scroll-x="true" style="max-width:940px;margin:0 auto;padding:10px 14px 12px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none">
+    <sc-for list="{{ days }}" as="d" hint-placeholder-count="13">
+      <a href="#{{ d.page }}" data-chip="true" data-today="{{ d.isToday }}" style="flex:0 0 auto;display:flex;flex-direction:column;justify-content:center;gap:2px;min-width:54px;height:46px;padding:0 10px;border:1px solid rgba(255,255,255,.18);border-radius:5px;text-decoration:none;color:#fff">
+        <span style="font-size:11px;font-weight:600;letter-spacing:.04em">D{{ d.n }}</span>
+        <span style="font-size:10px;font-weight:300;opacity:.72">{{ d.date }} oct</span>
+      </a>
+    </sc-for>
+  </div>
+</header>
+<main style="max-width:940px;margin:0 auto;padding:14px 14px 130px;display:flex;flex-direction:column;gap:16px">
+
+<section id="p01" data-screen-label="01 Portada" style="position:relative;border-radius:14px;overflow:hidden;background:#0B132B;font-family:Inter,sans-serif">
+  <img src="img/01.jpg" alt="Shibuya de noche" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5">
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,19,43,.72) 0%,rgba(11,19,43,.35) 38%,rgba(11,19,43,.92) 100%)"></div>
+  <div style="position:relative;display:flex;flex-direction:column;gap:clamp(28px,7vw,60px);padding:clamp(26px,6vw,60px);box-sizing:border-box">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px;color:#53F3D7">
+      <div style="font-size:15px;font-weight:500;letter-spacing:.2em">日本</div>
+      <div style="font-size:10px;font-weight:500;letter-spacing:.16em;text-align:right;line-height:2">PLANNING OPTIMIZADO<br><span style="color:#fff">17 — 29 OCTUBRE 2026</span></div>
+    </div>
+    <div style="color:#fff">
+      <div style="font-size:11px;font-weight:500;letter-spacing:.18em;color:#53F3D7;margin-bottom:14px">FAMILIA PANO HERNANDEZ · 3 VIAJEROS · 13 DÍAS</div>
+      <div style="font-family:Poppins,sans-serif;font-weight:700;font-size:clamp(52px,14vw,112px);line-height:.86;letter-spacing:-.02em">JAPÓN<br><span style="color:#5D79FF">2026</span></div>
+      <div style="height:1px;background:rgba(255,255,255,.3);margin:22px 0 18px"></div>
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px">
+        <div style="font-size:15px;font-weight:300;line-height:1.6;max-width:26em">Tokio · Kioto · Osaka. Trece días con las rutas ordenadas por zona geográfica, los templos a primera hora y todo lo importante ya reservado.</div>
+        <div style="font-size:12px;font-weight:300;line-height:1.9">Maria Amparo Hernandez Peraire<br>Carlos Pano Garcia<br>Carlos Pano Hernandez</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+      <button onClick="{{ goToday }}" style="appearance:none;border:0;cursor:pointer;background:#53F3D7;color:#0B132B;font-family:Inter,sans-serif;font-size:14px;font-weight:600;padding:0 22px;height:48px;border-radius:5px">{{ ctaLabel }}</button>
+      <a href="#p02" style="display:inline-flex;align-items:center;height:48px;padding:0 20px;border:1px solid rgba(255,255,255,.35);border-radius:5px;color:#fff;font-size:14px;font-weight:500;text-decoration:none">Ver el índice</a>
+      <div style="font-size:12px;font-weight:300;color:#53F3D7">{{ statusLabel }}</div>
+    </div>
+  </div>
+</section>
+<section id="p02" data-screen-label="02 Índice" style="scroll-margin-top:118px;border-radius:14px;box-shadow:0 6px 40px rgba(11,19,43,.10);padding:min(0.62in,4.8vw) min(0.64in,4.9vw) min(0.5in,3.8vw);display:flex;flex-direction:column;font-family:Inter,sans-serif;color:#172933;background:#fff;overflow:hidden">
+  <div style="font-size:8pt;font-weight:500;letter-spacing:.16em;color:#5D79FF">CONTENIDO</div>
+  <div style="font-family:Poppins,sans-serif;font-size:30pt;font-weight:700;color:#0B132B;line-height:1.05;margin:6px 0 4px">El viaje, página por página</div>
+  <div style="font-size:10pt;font-weight:300;color:#172933;max-width:4.6in;margin-bottom:26px">Una página por día. Las cuatro primeras son para leer antes de salir; el resto se consulta en la calle.</div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 34px;font-size:9.5pt">
+    <div>
+      <div style="font-size:8pt;font-weight:500;letter-spacing:.14em;color:#A3ACB1;padding-bottom:7px;border-bottom:1px solid #0B132B">ANTES DE SALIR</div>
+      <a href="#p03" style="display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #EBEBEB;text-decoration:none;color:inherit;min-height:44px;align-items:center"><span>Reservas y confirmaciones</span><span style="color:#A3ACB1">03</span></a>
+      <a href="#p04" style="display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #EBEBEB;text-decoration:none;color:inherit;min-height:44px;align-items:center"><span>Presupuesto por día</span><span style="color:#A3ACB1">04</span></a>
+      <a href="#p05" style="display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #EBEBEB;text-decoration:none;color:inherit;min-height:44px;align-items:center"><span>Equipaje</span><span style="color:#A3ACB1">05</span></a>
+      <a href="#p06" style="display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #EBEBEB;text-decoration:none;color:inherit;min-height:44px;align-items:center"><span>Frases, contactos y emergencias</span><span style="color:#A3ACB1">06</span></a>
+
+      <div style="font-size:8pt;font-weight:500;letter-spacing:.14em;color:#5D79FF;padding:22px 0 7px;border-bottom:1px solid #5D79FF">TOKIO · 4 NOCHES</div>
+      <a href="#p07" style="display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #EBEBEB;text-decoration:none;color:inherit;min-height:44px;align-items:center"><span>La ciudad: zonas, imperdibles, mesas</span><span style="color:#A3ACB1">07</span></a>
+      <a href="#p08" style="display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #EBEBEB;text-decoration:none;color:inherit;min-height:44px;align-items:center"><span>Día 1 · Llegada a Haneda</span><span style="color:#A3ACB1">08</span></a>
+      <a href="#p09" style="display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #EBEBEB;text-decoration:none;color:inherit;min-height:44px;align-items:center"><span>Día 2 · Asakusa, Ueno, Skytree</span><span style="color:#A3ACB1">09</span></a>
+      <a href="#p10" style="display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #EBEBEB;text-decoration:none;color:inherit;min-height:44px;align-items:center"><span>Día 3 · Meiji, Harajuku, Shinjuku</span><span style="color:#A3ACB1">10</span></a>
+      <a href="#p11" style="display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #EBEBEB;text-decoration:none;color:inherit;min-height:44px;align-items:center"><span>Día 4 · TeamLab, Tsukiji, Shibuya Sky</span><span style="color:#A3ACB1">11</span></a>
+      <a href="#p12" style="display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #EBEBEB;text-decoration:none;color:inherit;min-height:44px;align-items:center"><span>Día 5 · Nozomi a Kioto</span><span style="color:#A3ACB1">12</span></a>
+    </div>
+    <div>
+      <div style="font-size:8pt;font-weight:500;letter-spacing:.14em;color:#00C1A2;padding-bottom:7px;border-bottom:1px solid #00C1A2">KIOTO · 3 NOCHES</div>
+      <a href="#p13" style="display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #EBEBEB;text-decoration:none;color:inherit;min-height:44px;align-items:center"><span>La ciudad: zonas, imperdibles, mesas</span><span style="color:#A3ACB1">13</span></a>
+      <a href="#p14" style="display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #EBEBEB;text-decoration:none;color:inherit;min-height:44px;align-items:center"><span>Día 5 · Nishiki y Gion de noche</span><span style="color:#A3ACB1">14</span></a>
+      <a href="#p15" style="display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #EBEBEB;text-decoration:none;color:inherit;min-height:44px;align-items:center"><span>Día 6 · Fushimi Inari al alba</span><span style="color:#A3ACB1">15</span></a>
+      <a href="#p16" style="display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #EBEBEB;text-decoration:none;color:inherit;min-height:44px;align-items:center"><span>Día 7 · Arashiyama y Kinkaku-ji</span><span style="color:#A3ACB1">16</span></a>
+      <a href="#p17" style="display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #EBEBEB;text-decoration:none;color:inherit;min-height:44px;align-items:center"><span>Día 8 · Tren a Osaka</span><span style="color:#A3ACB1">17</span></a>
+
+      <div style="font-size:8pt;font-weight:500;letter-spacing:.14em;color:#0B132B;padding:22px 0 7px;border-bottom:1px solid #0B132B">OSAKA · 5 NOCHES</div>
+      <a href="#p18" style="display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #EBEBEB;text-decoration:none;color:inherit;min-height:44px;align-items:center"><span>La ciudad: zonas, imperdibles, mesas</span><span style="color:#A3ACB1">18</span></a>
+      <a href="#p19" style="display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #EBEBEB;text-decoration:none;color:inherit;min-height:44px;align-items:center"><span>Día 8 · Primera noche en Dotonbori</span><span style="color:#A3ACB1">19</span></a>
+      <a href="#p20" style="display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #EBEBEB;text-decoration:none;color:inherit;min-height:44px;align-items:center"><span>Día 9 · Castillo y Shinsekai</span><span style="color:#A3ACB1">20</span></a>
+      <a href="#p21" style="display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #EBEBEB;text-decoration:none;color:inherit;min-height:44px;align-items:center"><span>Día 10 · Umeda y compras</span><span style="color:#A3ACB1">21</span></a>
+      <a href="#p22" style="display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #EBEBEB;text-decoration:none;color:inherit;min-height:44px;align-items:center"><span>Día 11 · Universal Studios Japan</span><span style="color:#A3ACB1">22</span></a>
+      <a href="#p23" style="display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #EBEBEB;text-decoration:none;color:inherit;min-height:44px;align-items:center"><span>Día 12 · Nara</span><span style="color:#A3ACB1">23</span></a>
+      <a href="#p24" style="display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #EBEBEB;text-decoration:none;color:inherit;min-height:44px;align-items:center"><span>Día 13 · Kansai y vuelta a casa</span><span style="color:#A3ACB1">24</span></a>
+      <a href="#p25" style="display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #EBEBEB;text-decoration:none;color:inherit;min-height:44px;align-items:center"><span>Notas</span><span style="color:#A3ACB1">25</span></a>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:26px">
+    <div style="height:min(1.5in,23.1vw);border-radius:5px;overflow:hidden;box-shadow:0 4px 60px rgba(28,37,65,.05)"><img src="img/02.jpg" alt="Senso-ji" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+    <div style="height:min(1.5in,23.1vw);border-radius:5px;overflow:hidden;box-shadow:0 4px 60px rgba(28,37,65,.05)"><img src="img/05.jpg" alt="Fushimi Inari" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+    <div style="height:min(1.5in,23.1vw);border-radius:5px;overflow:hidden;box-shadow:0 4px 60px rgba(28,37,65,.05)"><img src="img/08.jpg" alt="Dotonbori" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+  </div>
+
+  <div style="margin-top:auto;padding-top:12px;border-top:1px solid #EBEBEB;display:flex;justify-content:space-between;font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#A3ACB1">
+    <span>JAPÓN 2026 · FAMILIA PANO HERNANDEZ</span><span>02</span>
+  </div>
+</section>
+
+<section id="p03" data-screen-label="03 Reservas" style="scroll-margin-top:118px;border-radius:14px;box-shadow:0 6px 40px rgba(11,19,43,.10);padding:min(0.62in,4.8vw) min(0.64in,4.9vw) min(0.5in,3.8vw);display:flex;flex-direction:column;font-family:Inter,sans-serif;color:#172933;background:#fff;overflow:hidden">
+  <div style="font-size:8pt;font-weight:500;letter-spacing:.16em;color:#5D79FF">ANTES DE SALIR · 01</div>
+  <div style="font-family:Poppins,sans-serif;font-size:28pt;font-weight:700;color:#0B132B;line-height:1.05;margin:6px 0 20px">Reservas y confirmaciones</div>
+
+  <div style="display:flex;align-items:center;gap:10px;background:#F4F6F8;padding:12px 14px;margin-bottom:20px">
+    <div style="font-size:9pt;font-weight:600;color:#0B132B">Todo pagado salvo una cosa:</div>
+    <div style="font-size:9pt;font-weight:300">Shibuya Sky — reservar alrededor del 6 de octubre, slot 16:30 del 20 Oct, en shibuya-scramble-square.com</div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;font-size:9pt">
+    <div style="border:1px solid #EBEBEB;padding:13px 14px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px"><span style="font-weight:600;color:#0B132B">Vuelos · Air Canada</span><span style="font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#00C1A2">CONFIRMADO</span></div>
+      <div style="font-weight:300;line-height:1.55">MEX → YYZ → HND · AC0992 + AC0001<br>Código DBETWR | B9FITB · 3 pax<br>Regreso desde KIX el 29 Oct</div>
+    </div>
+    <div style="border:1px solid #EBEBEB;padding:13px 14px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px"><span style="font-weight:600;color:#0B132B">Shibuya Tobu Hotel</span><span style="font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#00C1A2">CONFIRMADO</span></div>
+      <div style="font-weight:300;line-height:1.55">3-1 Udagawa-cho, Shibuya · Twin with Sofa<br>Agoda #958975254 · No fumar<br>17 Oct 14:00 → 21 Oct 11:00</div>
+    </div>
+    <div style="border:1px solid #EBEBEB;padding:13px 14px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px"><span style="font-weight:600;color:#0B132B">Nozomi Green Car</span><span style="font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#00C1A2">CONFIRMADO</span></div>
+      <div style="font-weight:300;line-height:1.55">Tokyo → Kyoto · 21 Oct 09:30<br>Order #96703 · ¥23,750 × 3 = ¥71,250<br>Asientos lado D: Monte Fuji</div>
+    </div>
+    <div style="border:1px solid #EBEBEB;padding:13px 14px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px"><span style="font-weight:600;color:#0B132B">Hotel Vischio Kyoto by GRANVIA</span><span style="font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#00C1A2">CONFIRMADO</span></div>
+      <div style="font-weight:300;line-height:1.55">Literalmente dentro de Kyoto Station<br>21 Oct 15:00 → 24 Oct 11:00</div>
+    </div>
+    <div style="border:1px solid #EBEBEB;padding:13px 14px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px"><span style="font-weight:600;color:#0B132B">Plum Hotel — Osaka Namba</span><span style="font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#00C1A2">CONFIRMADO</span></div>
+      <div style="font-weight:300;line-height:1.55">Dotonbori a pie · USJ a 20 min<br>Acceso directo a Nara vía Kintetsu<br>24 Oct 16:00 → 29 Oct 10:00</div>
+    </div>
+    <div style="border:1px solid #EBEBEB;padding:13px 14px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px"><span style="font-weight:600;color:#0B132B">Tokyo Skytree</span><span style="font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#00C1A2">CONFIRMADO</span></div>
+      <div style="font-weight:300;line-height:1.55">18 Oct 19:00 · Combo 350 m + 450 m<br>3 adultos</div>
+    </div>
+    <div style="border:1px solid #EBEBEB;padding:13px 14px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px"><span style="font-weight:600;color:#0B132B">TeamLab Planets</span><span style="font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#00C1A2">CONFIRMADO</span></div>
+      <div style="font-weight:300;line-height:1.55">20 Oct 08:00 · Toyosu<br>3 adultos · ¥5,600 por persona</div>
+    </div>
+    <div style="border:1px solid #EBEBEB;padding:13px 14px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px"><span style="font-weight:600;color:#0B132B">Universal Studios Japan</span><span style="font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#00C1A2">CONFIRMADO</span></div>
+      <div style="font-weight:300;line-height:1.55">27 Oct · 3 tickets + ExpressPass<br>Timed entry de Nintendo World: en la app, al entrar</div>
+    </div>
+    <div style="border:1px solid #0B132B;padding:13px 14px;grid-column:span 2;background:#F4F6F8">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px"><span style="font-weight:600;color:#0B132B">Shibuya Sky</span><span style="font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#0B132B">PENDIENTE — RESERVAR ~6 OCT</span></div>
+      <div style="font-weight:300;line-height:1.55">20 Oct · slot 16:30 · shibuya-scramble-square.com · Los slots de atardecer se agotan en cuanto abren, con 4 semanas de anticipación.</div>
+    </div>
+  </div>
+
+  <div style="margin-top:20px;border-top:1px solid #0B132B;padding-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:14px;font-size:9pt">
+    <div>
+      <div style="font-size:8pt;font-weight:500;letter-spacing:.14em;color:#5D79FF;margin-bottom:7px">DOS AVISOS DE LOGÍSTICA</div>
+      <div style="font-weight:300;line-height:1.55"><strong style="font-weight:600;color:#0B132B">Noche del 20:</strong> avisar en recepción del Shibuya Tobu. El shinkansen sale 09:30 el día 21 y hay que salir del hotel a las 08:30.</div>
+      <div style="font-weight:300;line-height:1.55;margin-top:7px"><strong style="font-weight:600;color:#0B132B">21 Oct, 11:45:</strong> se llega a Kioto antes del check-in de las 15:00. Consigna en la estación, ¥400–700 por maleta.</div>
+    </div>
+    <div>
+      <div style="font-size:8pt;font-weight:500;letter-spacing:.14em;color:#5D79FF;margin-bottom:7px">APPS IMPRESCINDIBLES</div>
+      <div style="font-weight:300;line-height:1.7"><strong style="font-weight:600;color:#0B132B">Google Maps</strong> — indica andén exacto · <strong style="font-weight:600;color:#0B132B">Google Translate</strong> — cámara en menús · <strong style="font-weight:600;color:#0B132B">USJ App</strong> — timed entry Nintendo World · <strong style="font-weight:600;color:#0B132B">Hyperdia</strong> — rutas de metro en tiempo real · <strong style="font-weight:600;color:#0B132B">PayPay</strong> — pagos QR en tiendas</div>
+    </div>
+  </div>
+
+  <div style="margin-top:auto;padding-top:12px;border-top:1px solid #EBEBEB;display:flex;justify-content:space-between;font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#A3ACB1">
+    <span>RESERVAS Y CONFIRMACIONES</span><span>03</span>
+  </div>
+</section>
+
+<section id="p04" data-screen-label="04 Presupuesto" style="scroll-margin-top:118px;border-radius:14px;box-shadow:0 6px 40px rgba(11,19,43,.10);padding:min(0.62in,4.8vw) min(0.64in,4.9vw) min(0.5in,3.8vw);display:flex;flex-direction:column;font-family:Inter,sans-serif;color:#172933;background:#fff;overflow:hidden">
+  <div style="font-size:8pt;font-weight:500;letter-spacing:.16em;color:#5D79FF">ANTES DE SALIR · 02</div>
+  <div style="font-family:Poppins,sans-serif;font-size:28pt;font-weight:700;color:#0B132B;line-height:1.05;margin:6px 0 6px">Presupuesto por día</div>
+  <div style="font-size:9.5pt;font-weight:300;max-width:5in;margin-bottom:18px">Estimado por persona, en yenes. No incluye compras ni lo ya pagado (vuelos, hoteles, shinkansen, Skytree, TeamLab, Universal).</div>
+
+  <table style="width:100%;border-collapse:collapse;font-size:9pt">
+    <thead>
+      <tr style="border-bottom:1px solid #0B132B">
+        <th style="text-align:left;padding:0 0 7px;font-size:8pt;font-weight:500;letter-spacing:.12em;color:#A3ACB1">DÍA</th>
+        <th style="text-align:left;padding:0 0 7px;font-size:8pt;font-weight:500;letter-spacing:.12em;color:#A3ACB1">RUTA</th>
+        <th style="text-align:right;padding:0 0 7px;font-size:8pt;font-weight:500;letter-spacing:.12em;color:#A3ACB1">TRANSPORTE</th>
+        <th style="text-align:right;padding:0 0 7px;font-size:8pt;font-weight:500;letter-spacing:.12em;color:#A3ACB1">ENTRADAS</th>
+        <th style="text-align:right;padding:0 0 7px;font-size:8pt;font-weight:500;letter-spacing:.12em;color:#A3ACB1">COMIDA</th>
+        <th style="text-align:right;padding:0 0 7px;font-size:8pt;font-weight:500;letter-spacing:.12em;color:#0B132B">DÍA</th>
+      </tr>
+    </thead>
+    <tbody style="font-weight:300">
+      <tr style="border-bottom:1px solid #EBEBEB"><td style="padding:6px 0;color:#5D79FF;font-weight:500">17 Oct</td><td style="padding:6px 0">Llegada · Shibuya</td><td style="text-align:right">460</td><td style="text-align:right">—</td><td style="text-align:right">2,500</td><td style="text-align:right;font-weight:600;color:#0B132B">2,960</td></tr>
+      <tr style="border-bottom:1px solid #EBEBEB"><td style="padding:6px 0;color:#5D79FF;font-weight:500">18 Oct</td><td style="padding:6px 0">Asakusa · Ueno · Skytree</td><td style="text-align:right">580</td><td style="text-align:right">pagado</td><td style="text-align:right">3,500</td><td style="text-align:right;font-weight:600;color:#0B132B">4,080</td></tr>
+      <tr style="border-bottom:1px solid #EBEBEB"><td style="padding:6px 0;color:#5D79FF;font-weight:500">19 Oct</td><td style="padding:6px 0">Meiji · Harajuku · Shinjuku</td><td style="text-align:right">400</td><td style="text-align:right">—</td><td style="text-align:right">3,500</td><td style="text-align:right;font-weight:600;color:#0B132B">3,900</td></tr>
+      <tr style="border-bottom:1px solid #EBEBEB"><td style="padding:6px 0;color:#5D79FF;font-weight:500">20 Oct</td><td style="padding:6px 0">TeamLab · Tsukiji · Shibuya Sky</td><td style="text-align:right">600</td><td style="text-align:right">2,500</td><td style="text-align:right">4,000</td><td style="text-align:right;font-weight:600;color:#0B132B">7,100</td></tr>
+      <tr style="border-bottom:1px solid #EBEBEB"><td style="padding:6px 0;color:#00C1A2;font-weight:500">21 Oct</td><td style="padding:6px 0">Nozomi a Kioto · Nishiki · Gion</td><td style="text-align:right">600</td><td style="text-align:right">—</td><td style="text-align:right">3,500</td><td style="text-align:right;font-weight:600;color:#0B132B">4,100</td></tr>
+      <tr style="border-bottom:1px solid #EBEBEB"><td style="padding:6px 0;color:#00C1A2;font-weight:500">22 Oct</td><td style="padding:6px 0">Fushimi Inari · Kiyomizudera</td><td style="text-align:right">600</td><td style="text-align:right">500</td><td style="text-align:right">3,500</td><td style="text-align:right;font-weight:600;color:#0B132B">4,600</td></tr>
+      <tr style="border-bottom:1px solid #EBEBEB"><td style="padding:6px 0;color:#00C1A2;font-weight:500">23 Oct</td><td style="padding:6px 0">Arashiyama · Kinkaku-ji · Ryoan-ji</td><td style="text-align:right">700</td><td style="text-align:right">1,600</td><td style="text-align:right">3,500</td><td style="text-align:right;font-weight:600;color:#0B132B">5,800</td></tr>
+      <tr style="border-bottom:1px solid #EBEBEB"><td style="padding:6px 0;color:#0B132B;font-weight:500">24 Oct</td><td style="padding:6px 0">Tren a Osaka · Dotonbori</td><td style="text-align:right">820</td><td style="text-align:right">—</td><td style="text-align:right">3,500</td><td style="text-align:right;font-weight:600;color:#0B132B">4,320</td></tr>
+      <tr style="border-bottom:1px solid #EBEBEB"><td style="padding:6px 0;color:#0B132B;font-weight:500">25 Oct</td><td style="padding:6px 0">Castillo · Shinsekai · Kuromon</td><td style="text-align:right">500</td><td style="text-align:right">1,400</td><td style="text-align:right">3,500</td><td style="text-align:right;font-weight:600;color:#0B132B">5,400</td></tr>
+      <tr style="border-bottom:1px solid #EBEBEB"><td style="padding:6px 0;color:#0B132B;font-weight:500">26 Oct</td><td style="padding:6px 0">Umeda · compras · Sky Building</td><td style="text-align:right">400</td><td style="text-align:right">2,600</td><td style="text-align:right">3,500</td><td style="text-align:right;font-weight:600;color:#0B132B">6,500</td></tr>
+      <tr style="border-bottom:1px solid #EBEBEB"><td style="padding:6px 0;color:#0B132B;font-weight:500">27 Oct</td><td style="padding:6px 0">Universal Studios Japan</td><td style="text-align:right">760</td><td style="text-align:right">3,500</td><td style="text-align:right">5,000</td><td style="text-align:right;font-weight:600;color:#0B132B">9,260</td></tr>
+      <tr style="border-bottom:1px solid #EBEBEB"><td style="padding:6px 0;color:#0B132B;font-weight:500">28 Oct</td><td style="padding:6px 0">Nara · última noche</td><td style="text-align:right">1,360</td><td style="text-align:right">1,200</td><td style="text-align:right">4,000</td><td style="text-align:right;font-weight:600;color:#0B132B">6,560</td></tr>
+      <tr style="border-bottom:1px solid #0B132B"><td style="padding:6px 0;color:#0B132B;font-weight:500">29 Oct</td><td style="padding:6px 0">Compras finales · KIX</td><td style="text-align:right">1,450</td><td style="text-align:right">—</td><td style="text-align:right">2,000</td><td style="text-align:right;font-weight:600;color:#0B132B">3,450</td></tr>
+      <tr><td colspan="5" style="padding:9px 0;font-weight:600;color:#0B132B">Total estimado por persona · 13 días</td><td style="text-align:right;padding:9px 0;font-weight:600;font-size:11pt;color:#5D79FF">68,030</td></tr>
+      <tr><td colspan="5" style="font-weight:300;color:#A3ACB1">Tres viajeros</td><td style="text-align:right;font-weight:500;color:#A3ACB1">204,090</td></tr>
+    </tbody>
+  </table>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px;padding-top:16px;border-top:1px solid #0B132B;font-size:9pt">
+    <div>
+      <div style="font-size:8pt;font-weight:500;letter-spacing:.14em;color:#5D79FF;margin-bottom:8px">DINERO Y PAGOS</div>
+      <div style="font-weight:300;line-height:1.75">Japón es principalmente efectivo.<br>Los ATM de 7-Eleven aceptan tarjetas extranjeras.<br>Tax-free desde ¥5,000 — presentar pasaporte.<br>Colchón real: ¥10,000–15,000 por persona al día.<br>Referencia: ~¥8.3–8.5 por peso mexicano.</div>
+    </div>
+    <div>
+      <div style="font-size:8pt;font-weight:500;letter-spacing:.14em;color:#5D79FF;margin-bottom:8px">SUICA</div>
+      <div style="font-weight:300;line-height:1.75">Se compra en Haneda al salir de migración, en las máquinas del pingüino azul. Depósito ¥500 más ¥3,000 de saldo por persona. Sirve para metro, JR, buses y conbini en las tres ciudades. Se devuelve en el aeropuerto el día 29 y recuperas el depósito más el saldo.</div>
+    </div>
+  </div>
+
+  <div style="margin-top:auto;padding-top:12px;border-top:1px solid #EBEBEB;display:flex;justify-content:space-between;font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#A3ACB1">
+    <span>PRESUPUESTO POR DÍA</span><span>04</span>
+  </div>
+</section>
+
+<section id="p05" data-screen-label="05 Equipaje" style="scroll-margin-top:118px;border-radius:14px;box-shadow:0 6px 40px rgba(11,19,43,.10);padding:min(0.62in,4.8vw) min(0.64in,4.9vw) min(0.5in,3.8vw);display:flex;flex-direction:column;font-family:Inter,sans-serif;color:#172933;background:#fff;overflow:hidden">
+  <div style="font-size:8pt;font-weight:500;letter-spacing:.16em;color:#5D79FF">ANTES DE SALIR · 03</div>
+  <div style="font-family:Poppins,sans-serif;font-size:28pt;font-weight:700;color:#0B132B;line-height:1.05;margin:6px 0 6px">Equipaje</div>
+  <div style="font-size:9.5pt;font-weight:300;max-width:5in;margin-bottom:20px">Air Canada permite 23 kg por adulto. Salir con la maleta a medias: en Japón se compra más de lo previsto.</div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px 26px;font-size:9.5pt">
+    <div>
+      <div style="font-size:8pt;font-weight:500;letter-spacing:.14em;color:#0B132B;padding-bottom:7px;border-bottom:1px solid #0B132B;margin-bottom:9px">DOCUMENTOS</div>
+      <div style="font-weight:300;line-height:2">Pasaportes vigentes (6+ meses)<br>Pases de abordar impresos<br>Confirmaciones de hoteles impresas<br>Order #96703 del shinkansen<br>Tickets de USJ, Skytree y TeamLab<br>Copia digital de todo en el teléfono<br>Seguro de viaje y número de asistencia</div>
+    </div>
+    <div>
+      <div style="font-size:8pt;font-weight:500;letter-spacing:.14em;color:#0B132B;padding-bottom:7px;border-bottom:1px solid #0B132B;margin-bottom:9px">TECNOLOGÍA</div>
+      <div style="font-weight:300;line-height:2">Japón usa clavija tipo A, 100 V — los enchufes mexicanos entran<br>Power bank (días de 12 horas fuera)<br>Cargadores y un cable extra<br>eSIM o pocket wifi contratado antes de salir<br>Cámara y tarjeta de memoria vacía<br>Audífonos</div>
+    </div>
+    <div>
+      <div style="font-size:8pt;font-weight:500;letter-spacing:.14em;color:#0B132B;padding-bottom:7px;border-bottom:1px solid #0B132B;margin-bottom:9px">ROPA · OCTUBRE, 15–24 °C</div>
+      <div style="font-weight:300;line-height:2">Capas ligeras, no ropa gruesa<br>Chamarra ligera para las noches<br>Un suéter<br>Tenis ya rodados: se camina 15–20 km al día<br>Calcetines extra para TeamLab (se moja el pie)<br>Sandalias de hotel<br>Paraguas plegable, o comprarlo en conbini por ¥500</div>
+    </div>
+    <div>
+      <div style="font-size:8pt;font-weight:500;letter-spacing:.14em;color:#0B132B;padding-bottom:7px;border-bottom:1px solid #0B132B;margin-bottom:9px">PRÁCTICO</div>
+      <div style="font-weight:300;line-height:2">Bolsa plegable: en las tiendas cobran la bolsa<br>Bolsita para basura: no hay botes en la calle<br>Monedero para monedas — se acumulan rápido<br>Toalla de mano: muchos baños no tienen secador<br>Libreta goshuin para los sellos de templos<br>Medicinas de siempre en su empaque original<br>Curitas para ampollas</div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px">
+    <div style="height:min(2.1in,32.3vw);border-radius:5px;overflow:hidden;box-shadow:0 4px 60px rgba(28,37,65,.05)"><img src="img/06.jpg" alt="Arashiyama" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+    <div style="position:relative;height:min(2.1in,32.3vw)"><image-slot id="jp-packing" shape="rounded" radius="5" placeholder="Foto de la maleta lista, o cualquier foto de familia para la portadilla"></image-slot></div>
+  </div>
+
+  <div style="margin-top:auto;padding-top:12px;border-top:1px solid #EBEBEB;display:flex;justify-content:space-between;font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#A3ACB1">
+    <span>EQUIPAJE</span><span>05</span>
+  </div>
+</section>
+
+<section id="p06" data-screen-label="06 Frases y contactos" style="scroll-margin-top:118px;border-radius:14px;box-shadow:0 6px 40px rgba(11,19,43,.10);padding:min(0.62in,4.8vw) min(0.64in,4.9vw) min(0.5in,3.8vw);display:flex;flex-direction:column;font-family:Inter,sans-serif;color:#172933;background:#fff;overflow:hidden">
+  <div style="font-size:8pt;font-weight:500;letter-spacing:.16em;color:#5D79FF">ANTES DE SALIR · 04</div>
+  <div style="font-family:Poppins,sans-serif;font-size:28pt;font-weight:700;color:#0B132B;line-height:1.05;margin:6px 0 20px">Frases, contactos y etiqueta</div>
+
+  <div style="display:grid;grid-template-columns:1.15fr 1fr;gap:26px;font-size:9pt">
+    <div>
+      <div style="font-size:8pt;font-weight:500;letter-spacing:.14em;color:#00C1A2;padding-bottom:7px;border-bottom:1px solid #00C1A2;margin-bottom:4px">LAS FRASES QUE SÍ SE USAN</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 14px">
+        <div style="padding:7px 0;border-bottom:1px solid #EBEBEB"><div style="font-weight:600;color:#0B132B">Buenos días / Hola</div><div style="font-weight:300">こんにちは · Konnichiwa</div></div>
+        <div style="padding:7px 0;border-bottom:1px solid #EBEBEB"><div style="font-weight:600;color:#0B132B">Gracias</div><div style="font-weight:300">ありがとうございます · Arigatō gozaimasu</div></div>
+        <div style="padding:7px 0;border-bottom:1px solid #EBEBEB"><div style="font-weight:600;color:#0B132B">Disculpe / Perdón</div><div style="font-weight:300">すみません · Sumimasen</div></div>
+        <div style="padding:7px 0;border-bottom:1px solid #EBEBEB"><div style="font-weight:600;color:#0B132B">Sí / No</div><div style="font-weight:300">はい · Hai / いいえ · Iie</div></div>
+        <div style="padding:7px 0;border-bottom:1px solid #EBEBEB"><div style="font-weight:600;color:#0B132B">¿Cuánto cuesta?</div><div style="font-weight:300">いくらですか · Ikura desu ka</div></div>
+        <div style="padding:7px 0;border-bottom:1px solid #EBEBEB"><div style="font-weight:600;color:#0B132B">La cuenta, por favor</div><div style="font-weight:300">お会計お願いします · O-kaikei onegaishimasu</div></div>
+        <div style="padding:7px 0;border-bottom:1px solid #EBEBEB"><div style="font-weight:600;color:#0B132B">¿Dónde está el baño?</div><div style="font-weight:300">トイレはどこですか · Toire wa doko desu ka</div></div>
+        <div style="padding:7px 0;border-bottom:1px solid #EBEBEB"><div style="font-weight:600;color:#0B132B">Estaba delicioso</div><div style="font-weight:300">ごちそうさまでした · Gochisōsama deshita</div></div>
+        <div style="padding:7px 0;border-bottom:1px solid #EBEBEB"><div style="font-weight:600;color:#0B132B">No entiendo</div><div style="font-weight:300">わかりません · Wakarimasen</div></div>
+        <div style="padding:7px 0;border-bottom:1px solid #EBEBEB"><div style="font-weight:600;color:#0B132B">¿Habla inglés?</div><div style="font-weight:300">英語を話せますか · Eigo o hanasemasu ka</div></div>
+        <div style="padding:7px 0;border-bottom:1px solid #EBEBEB"><div style="font-weight:600;color:#0B132B">Ayuda</div><div style="font-weight:300">助けて · Tasukete</div></div>
+        <div style="padding:7px 0;border-bottom:1px solid #EBEBEB"><div style="font-weight:600;color:#0B132B">Tres personas</div><div style="font-weight:300">三人です · San-nin desu</div></div>
+      </div>
+      <div style="font-size:8pt;font-weight:500;letter-spacing:.14em;color:#00C1A2;padding:18px 0 7px;border-bottom:1px solid #00C1A2;margin-bottom:8px">LETREROS QUE HAY QUE RECONOCER</div>
+      <div style="font-weight:300;line-height:1.9">駅 eki, estación · 出口 deguchi, salida · 入口 iriguchi, entrada · 北 kita norte, 南 minami sur, 東 higashi este, 西 nishi oeste · 免税 menzei, tax free · 女 mujer, 男 hombre</div>
+    </div>
+
+    <div>
+      <div style="font-size:8pt;font-weight:500;letter-spacing:.14em;color:#0B132B;padding-bottom:7px;border-bottom:1px solid #0B132B;margin-bottom:9px">EMERGENCIAS</div>
+      <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #EBEBEB"><span style="font-weight:300">Policía</span><span style="font-weight:600;color:#0B132B">110</span></div>
+      <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #EBEBEB"><span style="font-weight:300">Bomberos y ambulancia</span><span style="font-weight:600;color:#0B132B">119</span></div>
+      <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #EBEBEB"><span style="font-weight:300">Línea de visitantes JNTO, 24 h</span><span style="font-weight:600;color:#0B132B">050-3816-2787</span></div>
+      <div style="font-size:8pt;font-weight:300;color:#A3ACB1;padding:6px 0">Confirmar el número de la Embajada de México en Japón (Chiyoda, Tokio) antes de salir y anotarlo aquí:</div>
+      <div style="height:22px;border-bottom:1px solid #A3ACB1"></div>
+
+      <div style="font-size:8pt;font-weight:500;letter-spacing:.14em;color:#0B132B;padding:18px 0 7px;border-bottom:1px solid #0B132B;margin-bottom:9px">DÓNDE DORMIMOS</div>
+      <div style="font-weight:300;line-height:1.6;padding-bottom:7px;border-bottom:1px solid #EBEBEB"><strong style="font-weight:600;color:#5D79FF">17–21 Oct</strong> · Shibuya Tobu Hotel<br>3-1 Udagawa-cho, Shibuya, Tokio</div>
+      <div style="font-weight:300;line-height:1.6;padding:7px 0;border-bottom:1px solid #EBEBEB"><strong style="font-weight:600;color:#00C1A2">21–24 Oct</strong> · Hotel Vischio Kyoto by GRANVIA<br>Dentro de Kyoto Station</div>
+      <div style="font-weight:300;line-height:1.6;padding:7px 0"><strong style="font-weight:600;color:#0B132B">24–29 Oct</strong> · Plum Hotel Osaka Namba<br>Namba, Osaka</div>
+
+      <div style="font-size:8pt;font-weight:500;letter-spacing:.14em;color:#0B132B;padding:18px 0 7px;border-bottom:1px solid #0B132B;margin-bottom:9px">ETIQUETA</div>
+      <div style="font-weight:300;line-height:1.85">No hablar por teléfono en el tren.<br>No comer de pie en la calle, sobre todo en Kioto.<br>Las propinas ofenden. Nunca.<br>Zapatos fuera donde haya tatami o escalón.<br>El conbini es el aliado 24/7: cajeros, baño, desayuno.<br>Filas ordenadas en el andén, se deja bajar primero.</div>
+    </div>
+  </div>
+
+  <div style="margin-top:auto;padding-top:12px;border-top:1px solid #EBEBEB;display:flex;justify-content:space-between;font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#A3ACB1">
+    <span>FRASES, CONTACTOS Y ETIQUETA</span><span>06</span>
+  </div>
+</section>
+
+<section id="p07" data-screen-label="07 Tokio" style="scroll-margin-top:118px;border-radius:14px;box-shadow:0 6px 40px rgba(11,19,43,.10);padding:0;position:relative;overflow:hidden;background:#0B132B;font-family:Inter,sans-serif">
+  <img src="img/01.jpg" alt="Tokio" style="position:absolute;top:0;left:0;width:100%;height:min(4.3in,66.2vw);object-fit:cover;opacity:.62">
+  <div style="position:absolute;top:0;left:0;width:100%;height:min(4.3in,66.2vw);background:linear-gradient(180deg,rgba(11,19,43,.55),rgba(11,19,43,.98))"></div>
+  <div style="position:relative;height:100%;display:flex;flex-direction:column">
+    <div style="padding:min(0.6in,4.6vw) min(0.64in,4.9vw) 0;color:#fff">
+      <div style="font-size:8pt;font-weight:500;letter-spacing:.16em;color:#5D79FF">CIUDAD 1 · 4 NOCHES · SHIBUYA TOBU HOTEL</div>
+      <div style="display:flex;align-items:flex-end;gap:18px;margin:10px 0 0">
+        <div style="font-family:Poppins,sans-serif;font-size:52pt;font-weight:700;line-height:.9">TOKIO</div>
+        <div style="font-size:22pt;font-weight:300;color:#5D79FF;padding-bottom:8px">東京</div>
+      </div>
+      <div style="font-size:10pt;font-weight:300;max-width:4.5in;margin-top:12px;line-height:1.6">17 Oct (sáb) — 21 Oct (mié). Cuatro días partidos por zona: el este histórico, el oeste de moda, la bahía y el arte digital. Todo confirmado.</div>
+    </div>
+
+    <div style="flex:1;background:#fff;margin-top:min(2.4in,18.5vw);padding:min(0.34in,2.6vw) min(0.64in,4.9vw) min(0.5in,3.8vw);display:flex;flex-direction:column;color:#172933">
+      <div style="font-size:8pt;font-weight:500;letter-spacing:.14em;color:#5D79FF;padding-bottom:7px;border-bottom:1px solid #5D79FF">MAPA DE ZONAS — QUÉ DÍA TOCA CADA UNA</div>
+      <div style="position:relative;height:min(1.85in,28.5vw);background:#F4F6F8;margin:10px 0 16px">
+        <div style="position:absolute;left:14%;top:22%;font-size:8.5pt"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#5D79FF;margin-right:5px"></span>Shinjuku <span style="color:#A3ACB1">D3</span></div>
+        <div style="position:absolute;left:12%;top:52%;font-size:8.5pt"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#5D79FF;margin-right:5px"></span>Harajuku · Meiji <span style="color:#A3ACB1">D3</span></div>
+        <div style="position:absolute;left:9%;top:76%;font-size:8.5pt"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#0B132B;margin-right:5px"></span><strong style="font-weight:600">Shibuya · hotel</strong> <span style="color:#A3ACB1">D1 D4</span></div>
+        <div style="position:absolute;left:44%;top:14%;font-size:8.5pt"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#5D79FF;margin-right:5px"></span>Ueno <span style="color:#A3ACB1">D2</span></div>
+        <div style="position:absolute;left:47%;top:32%;font-size:8.5pt"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#5D79FF;margin-right:5px"></span>Akihabara <span style="color:#A3ACB1">D2</span></div>
+        <div style="position:absolute;left:70%;top:16%;font-size:8.5pt"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#5D79FF;margin-right:5px"></span>Asakusa <span style="color:#A3ACB1">D2</span></div>
+        <div style="position:absolute;left:82%;top:33%;font-size:8.5pt"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#00C1A2;margin-right:5px"></span>Skytree <span style="color:#A3ACB1">D2</span></div>
+        <div style="position:absolute;left:52%;top:62%;font-size:8.5pt"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#5D79FF;margin-right:5px"></span>Ginza · Tsukiji <span style="color:#A3ACB1">D4</span></div>
+        <div style="position:absolute;left:74%;top:80%;font-size:8.5pt"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#00C1A2;margin-right:5px"></span>Toyosu · TeamLab <span style="color:#A3ACB1">D4</span></div>
+        <div style="position:absolute;left:33%;top:88%;font-size:8.5pt"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#5D79FF;margin-right:5px"></span>Tokyo Station <span style="color:#A3ACB1">D5</span></div>
+        <div style="position:absolute;right:12px;bottom:10px;font-size:7.5pt;color:#A3ACB1">Esquema de posiciones relativas · no a escala</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;font-size:9pt">
+        <div>
+          <div style="font-size:8pt;font-weight:500;letter-spacing:.14em;color:#0B132B;padding-bottom:6px;border-bottom:1px solid #0B132B;margin-bottom:8px">IMPERDIBLES</div>
+          <div style="font-weight:300;line-height:1.85">Senso-ji y las calles de atrás, temprano<br>Los 450 m del Tembo Galleria, de noche<br>Meiji Jingu con el bosque vacío en lunes<br>TeamLab Planets descalzos, a las 8 am<br>El cruce de Shibuya desde arriba, al atardecer<br>El mirador gratuito del Gobierno Metropolitano, 202 m<br>Golden Gai: 200 bares de seis asientos</div>
+        </div>
+        <div>
+          <div style="font-size:8pt;font-weight:500;letter-spacing:.14em;color:#0B132B;padding-bottom:6px;border-bottom:1px solid #0B132B;margin-bottom:8px">DÓNDE COMER</div>
+          <div style="font-weight:300;line-height:1.85"><strong style="font-weight:600;color:#0B132B">Shibuya</strong> ramen en cualquier callejuela trasera<br><strong style="font-weight:600;color:#0B132B">Asakusa</strong> tempura y dorayaki en Nakamise<br><strong style="font-weight:600;color:#0B132B">Oshiage</strong> Ichiran o yakiniku antes del Skytree<br><strong style="font-weight:600;color:#0B132B">Tsukiji</strong> tamagoyaki, sashimi al momento, nigiri de atún<br><strong style="font-weight:600;color:#0B132B">Harajuku</strong> crepas de Takeshita Street<br><strong style="font-weight:600;color:#0B132B">Ginza</strong> comida corrida de mediodía en los sótanos</div>
+        </div>
+      </div>
+
+      <div style="margin-top:auto;padding-top:12px;border-top:1px solid #EBEBEB;display:flex;justify-content:space-between;font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#A3ACB1">
+        <span>TOKIO · 17 — 21 OCT</span><span>07</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="p08" data-screen-label="08 Día 1" style="scroll-margin-top:118px;border-radius:14px;box-shadow:0 6px 40px rgba(11,19,43,.10);padding:min(0.62in,4.8vw) min(0.64in,4.9vw) min(0.5in,3.8vw);display:flex;flex-direction:column;font-family:Inter,sans-serif;color:#172933;background:#fff;overflow:hidden">
+  <div style="display:flex;justify-content:space-between;align-items:baseline">
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.16em;color:#5D79FF">TOKIO · DÍA 1 · SÁB 17 OCT</div>
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.1em;color:#A3ACB1">DÍA 1 DE 13</div>
+  </div>
+  <div style="font-family:Poppins,sans-serif;font-size:26pt;font-weight:700;color:#0B132B;line-height:1.1;margin:8px 0 14px">Llegada a Haneda y primera noche en Shibuya</div>
+
+  <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:8.5pt;padding:10px 12px;background:#F4F6F8;margin-bottom:16px">
+    <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#5D79FF"></span><span style="font-weight:600;color:#0B132B">HND T3</span><span style="color:#A3ACB1">15:40</span>
+    <span style="color:#A3ACB1">— 40 min tren —</span>
+    <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#5D79FF"></span><span style="font-weight:600;color:#0B132B">Shibuya Tobu</span><span style="color:#A3ACB1">~17:30</span>
+    <span style="color:#A3ACB1">— 5 min a pie —</span>
+    <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#0B132B"></span><span style="font-weight:600;color:#0B132B">Shibuya Crossing</span><span style="color:#A3ACB1">~19:30</span>
+  </div>
+
+  <div style="height:min(2.5in,38.5vw);border-radius:5px;overflow:hidden;box-shadow:0 4px 60px rgba(28,37,65,.05);position:relative">
+    <image-slot id="jp-d1" shape="rounded" radius="5" placeholder="Foto de la llegada: Haneda o el cruce de Shibuya de noche"></image-slot>
+  </div>
+  <div style="font-size:8pt;color:#A3ACB1;padding:6px 0 16px">Shibuya de noche, a cinco minutos del hotel.</div>
+
+  <div style="display:grid;grid-template-columns:1.05in 1fr;gap:14px 16px;font-size:9.5pt;align-items:start">
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#5D79FF;padding-top:2px">TARDE<br>15:40</div>
+    <div style="padding-bottom:14px;border-bottom:1px solid #EBEBEB">
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Tokyo Haneda T3</div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">Migración y equipaje toman cerca de 60 minutos. Al salir, buscar las máquinas de la <strong style="font-weight:600">Suica</strong> — ícono de pingüino azul. Depositar ¥500 y recargar ¥3,000 por persona.</div>
+      <div style="font-weight:300;font-style:italic;color:#A3ACB1;margin-top:6px">La Suica es la tarjeta para todo: metro, JR, buses y conbini. Imprescindible desde el primer minuto.</div>
+    </div>
+
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#5D79FF;padding-top:2px">TRASLADO<br>~17:00</div>
+    <div style="padding-bottom:14px;border-bottom:1px solid #EBEBEB">
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Keikyu Airport Express al hotel</div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">HND T3 → Shinagawa, 15 min y ¥300. JR Yamanote → Shibuya, 12 min y ¥160. Total cerca de 40 min y ¥460 por persona.</div>
+      <div style="font-weight:300;line-height:1.6;margin-top:6px"><strong style="font-weight:600;color:#0B132B">Con maletas grandes:</strong> Limousine Bus directo HND → Shibuya Mark City, unos 50 min y ¥1,000. Sale del piso 1 de llegadas de la T3.</div>
+    </div>
+
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#5D79FF;padding-top:2px">NOCHE<br>DESDE 19:00</div>
+    <div>
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Primera impresión de Shibuya <span style="font-size:8pt;font-weight:500;color:#00C1A2;letter-spacing:.08em">GRATIS</span></div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">El cruce, la estatua de Hachikō, Centro-Gai. Cenar ramen en alguna callejuela trasera.</div>
+      <div style="font-weight:300;font-style:italic;color:#A3ACB1;margin-top:6px">Jet lag garantizado. Dormir temprano: mañana se arranca fuerte.</div>
+    </div>
+  </div>
+
+  <div style="margin-top:auto;padding-top:12px;border-top:1px solid #EBEBEB;display:flex;justify-content:space-between;font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#A3ACB1">
+    <span>DÍA 1 · LLEGADA A HANEDA</span><span>08</span>
+  </div>
+</section>
+
+<section id="p09" data-screen-label="09 Día 2" style="scroll-margin-top:118px;border-radius:14px;box-shadow:0 6px 40px rgba(11,19,43,.10);padding:min(0.62in,4.8vw) min(0.64in,4.9vw) min(0.5in,3.8vw);display:flex;flex-direction:column;font-family:Inter,sans-serif;color:#172933;background:#fff;overflow:hidden">
+  <div style="display:flex;justify-content:space-between;align-items:baseline">
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.16em;color:#5D79FF">TOKIO · DÍA 2 · DOM 18 OCT</div>
+    <div style="font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#00C1A2;border:1px solid #00C1A2;padding:2px 7px">SKYTREE CONFIRMADO 19:00</div>
+  </div>
+  <div style="font-family:Poppins,sans-serif;font-size:26pt;font-weight:700;color:#0B132B;line-height:1.1;margin:8px 0 14px">Este de Tokio: Asakusa, Ueno, Akihabara y el Skytree</div>
+
+  <div style="display:flex;align-items:center;gap:7px;flex-wrap:wrap;font-size:8.5pt;padding:10px 12px;background:#F4F6F8;margin-bottom:16px">
+    <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#0B132B"></span><span style="font-weight:600;color:#0B132B">Shibuya</span><span style="color:#A3ACB1">8:30</span>
+    <span style="color:#A3ACB1">— 35 min —</span>
+    <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#5D79FF"></span><span style="font-weight:600;color:#0B132B">Asakusa</span><span style="color:#A3ACB1">9:00</span>
+    <span style="color:#A3ACB1">— 5 min —</span>
+    <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#5D79FF"></span><span style="font-weight:600;color:#0B132B">Ueno</span><span style="color:#A3ACB1">12:00</span>
+    <span style="color:#A3ACB1">— 8 min —</span>
+    <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#5D79FF"></span><span style="font-weight:600;color:#0B132B">Akihabara</span><span style="color:#A3ACB1">14:00</span>
+    <span style="color:#A3ACB1">— 10 min —</span>
+    <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#00C1A2"></span><span style="font-weight:600;color:#0B132B">Skytree</span><span style="color:#A3ACB1">19:00</span>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+    <div style="height:min(2.15in,33.1vw);border-radius:5px;overflow:hidden;box-shadow:0 4px 60px rgba(28,37,65,.05)"><img src="img/02.jpg" alt="Senso-ji" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+    <div style="height:min(2.15in,33.1vw);border-radius:5px;overflow:hidden;box-shadow:0 4px 60px rgba(28,37,65,.05)"><img src="img/03.jpg" alt="Tokyo Skytree" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:8pt;color:#A3ACB1;padding:6px 0 16px">
+    <div>Senso-ji, el templo más antiguo de Tokio.</div>
+    <div>Tembo Galleria, 450 m, con la ciudad encendida.</div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1.05in 1fr;gap:14px 16px;font-size:9.5pt;align-items:start">
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#5D79FF;padding-top:2px">MAÑANA<br>9:00–12:00</div>
+    <div style="padding-bottom:14px;border-bottom:1px solid #EBEBEB">
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Asakusa — Senso-ji <span style="font-size:8pt;font-weight:500;color:#00C1A2;letter-spacing:.08em">GRATIS</span></div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">Salir a las 8:30, Ginza Line de Shibuya a Asakusa, 25 min y ¥220. Kaminarimon, Nakamise y las calles traseras del templo.</div>
+      <div style="font-weight:300;font-style:italic;color:#A3ACB1;margin-top:6px">Domingo concurrido desde las 10. La magia está en las calles secundarias detrás del templo.</div>
+    </div>
+
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#5D79FF;padding-top:2px">MEDIODÍA<br>12:00–18:00</div>
+    <div style="padding-bottom:14px;border-bottom:1px solid #EBEBEB">
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Ueno Park <span style="font-size:8pt;font-weight:500;color:#00C1A2;letter-spacing:.08em">GRATIS</span></div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">A 5 min a pie. Almuerzo en las terrazas del parque, domingo con familias japonesas.</div>
+      <div style="font-weight:600;color:#0B132B;margin-top:8px">Akihabara</div>
+      <div style="font-weight:300;line-height:1.6">8 min en metro por la Hibiya, ¥180. Capital mundial del anime, el manga y la electrónica. Yodobashi Camera tax-free y arcades.</div>
+      <div style="font-weight:600;color:#0B132B;margin-top:8px">Cena temprana cerca de Oshiage</div>
+      <div style="font-weight:300;line-height:1.6">Antes de las 18:30. Ramen Ichiran o yakiniku.</div>
+    </div>
+
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#00C1A2;padding-top:2px">NOCHE<br>19:00</div>
+    <div>
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Tokyo Skytree Combo <span style="font-size:8pt;font-weight:500;color:#00C1A2;letter-spacing:.08em">CONFIRMADO</span></div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">De Akihabara: Toei Asakusa Line a Oshiage, 10 min y ¥180. Tembo Deck a 350 m y Tembo Galleria a 450 m. La mejor perspectiva de la ciudad, con Tokio iluminado.</div>
+      <div style="font-weight:300;font-style:italic;color:#A3ACB1;margin-top:6px">Desde los 450 m, en día claro, se ven los aviones llegando a Haneda. Dura unos 90 minutos.</div>
+    </div>
+  </div>
+
+  <div style="margin-top:auto;padding-top:12px;border-top:1px solid #EBEBEB;display:flex;justify-content:space-between;font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#A3ACB1">
+    <span>DÍA 2 · ASAKUSA, UENO, SKYTREE</span><span>09</span>
+  </div>
+</section>
+
+<section id="p10" data-screen-label="10 Día 3" style="scroll-margin-top:118px;border-radius:14px;box-shadow:0 6px 40px rgba(11,19,43,.10);padding:min(0.62in,4.8vw) min(0.64in,4.9vw) min(0.5in,3.8vw);display:flex;flex-direction:column;font-family:Inter,sans-serif;color:#172933;background:#fff;overflow:hidden">
+  <div style="display:flex;justify-content:space-between;align-items:baseline">
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.16em;color:#5D79FF">TOKIO · DÍA 3 · LUN 19 OCT</div>
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.1em;color:#A3ACB1">DÍA 3 DE 13</div>
+  </div>
+  <div style="font-family:Poppins,sans-serif;font-size:26pt;font-weight:700;color:#0B132B;line-height:1.1;margin:8px 0 14px">Oeste de Tokio: Meiji, Harajuku, Omotesando y Shinjuku</div>
+
+  <div style="display:flex;align-items:center;gap:7px;flex-wrap:wrap;font-size:8.5pt;padding:10px 12px;background:#F4F6F8;margin-bottom:16px">
+    <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#0B132B"></span><span style="font-weight:600;color:#0B132B">Shibuya</span><span style="color:#A3ACB1">9:00</span>
+    <span style="color:#A3ACB1">— 15 min a pie —</span>
+    <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#5D79FF"></span><span style="font-weight:600;color:#0B132B">Meiji Jingu</span><span style="color:#A3ACB1">9:15</span>
+    <span style="color:#A3ACB1">— 10 min a pie —</span>
+    <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#5D79FF"></span><span style="font-weight:600;color:#0B132B">Harajuku</span><span style="color:#A3ACB1">11:00</span>
+    <span style="color:#A3ACB1">— 5 min —</span>
+    <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#5D79FF"></span><span style="font-weight:600;color:#0B132B">Shinjuku</span><span style="color:#A3ACB1">14:00</span>
+  </div>
+
+  <div style="height:min(2.4in,36.9vw);border-radius:5px;overflow:hidden;box-shadow:0 4px 60px rgba(28,37,65,.05);position:relative">
+    <image-slot id="jp-d3" shape="rounded" radius="5" placeholder="Foto de Meiji Jingu, Takeshita Street o Golden Gai"></image-slot>
+  </div>
+  <div style="font-size:8pt;color:#A3ACB1;padding:6px 0 16px">Lunes en el oeste: bosque por la mañana, neón por la noche.</div>
+
+  <div style="display:grid;grid-template-columns:1.05in 1fr;gap:14px 16px;font-size:9.5pt;align-items:start">
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#5D79FF;padding-top:2px">MAÑANA<br>9:00–11:00</div>
+    <div style="padding-bottom:14px;border-bottom:1px solid #EBEBEB">
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Meiji Jingu <span style="font-size:8pt;font-weight:500;color:#00C1A2;letter-spacing:.08em">GRATIS</span></div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">Un bosque de 100,000 árboles en pleno Tokio, a 15 minutos caminando del hotel. Silencio, tablas ema, omamori. En lunes no hay multitudes de fin de semana.</div>
+    </div>
+
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#5D79FF;padding-top:2px">MAÑANA-TARDE<br>11:00–14:00</div>
+    <div style="padding-bottom:14px;border-bottom:1px solid #EBEBEB">
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Harajuku y Omotesando <span style="font-size:8pt;font-weight:500;color:#00C1A2;letter-spacing:.08em">GRATIS</span></div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">Takeshita Street: crepas de Harajuku, algodón de azúcar, ropa kawaii. Omotesando es el Champs-Élysées tokiota: Zara, Louis Vuitton, Comme des Garçons.</div>
+    </div>
+
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#5D79FF;padding-top:2px">TARDE-NOCHE<br>14:00–21:00</div>
+    <div>
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Shinjuku</div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">UNIQLO, GU, MUJI, Don Quijote. Mirador del Gobierno Metropolitano: gratis, 202 m, abierto hasta las 22:30.</div>
+      <div style="font-weight:600;color:#0B132B;margin-top:8px">Golden Gai, de noche</div>
+      <div style="font-weight:300;line-height:1.6">Doscientos bares de seis asientos. Lo más característico de la noche tokiota.</div>
+    </div>
+  </div>
+
+  <div style="margin-top:auto;padding-top:12px;border-top:1px solid #EBEBEB;display:flex;justify-content:space-between;font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#A3ACB1">
+    <span>DÍA 3 · MEIJI, HARAJUKU, SHINJUKU</span><span>10</span>
+  </div>
+</section>
+
+<section id="p11" data-screen-label="11 Día 4" style="scroll-margin-top:118px;border-radius:14px;box-shadow:0 6px 40px rgba(11,19,43,.10);padding:min(0.62in,4.8vw) min(0.64in,4.9vw) min(0.5in,3.8vw);display:flex;flex-direction:column;font-family:Inter,sans-serif;color:#172933;background:#fff;overflow:hidden">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px">
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.16em;color:#5D79FF">TOKIO · DÍA 4 · MAR 20 OCT</div>
+    <div style="display:flex;gap:6px">
+      <div style="font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#00C1A2;border:1px solid #00C1A2;padding:2px 7px">TEAMLAB 8:00</div>
+      <div style="font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#0B132B;border:1px solid #0B132B;padding:2px 7px">SHIBUYA SKY — RESERVAR</div>
+    </div>
+  </div>
+  <div style="font-family:Poppins,sans-serif;font-size:26pt;font-weight:700;color:#0B132B;line-height:1.1;margin:8px 0 14px">TeamLab al amanecer, Tsukiji, Ginza y el atardecer desde Shibuya Sky</div>
+
+  <div style="display:flex;align-items:center;gap:7px;flex-wrap:wrap;font-size:8.5pt;padding:10px 12px;background:#F4F6F8;margin-bottom:16px">
+    <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#0B132B"></span><span style="font-weight:600;color:#0B132B">Shibuya</span><span style="color:#A3ACB1">7:00</span>
+    <span style="color:#A3ACB1">— 30 min —</span>
+    <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#00C1A2"></span><span style="font-weight:600;color:#0B132B">TeamLab</span><span style="color:#A3ACB1">8:00</span>
+    <span style="color:#A3ACB1">— 5 min —</span>
+    <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#5D79FF"></span><span style="font-weight:600;color:#0B132B">Tsukiji</span><span style="color:#A3ACB1">9:30</span>
+    <span style="color:#A3ACB1">— 15 min a pie —</span>
+    <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#5D79FF"></span><span style="font-weight:600;color:#0B132B">Ginza</span><span style="color:#A3ACB1">11:00</span>
+    <span style="color:#A3ACB1">— 15 min —</span>
+    <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#0B132B"></span><span style="font-weight:600;color:#0B132B">Shibuya Sky</span><span style="color:#A3ACB1">16:30</span>
+  </div>
+
+  <div style="height:min(2.4in,36.9vw);border-radius:5px;overflow:hidden;box-shadow:0 4px 60px rgba(28,37,65,.05)"><img src="img/04.jpg" alt="TeamLab Planets" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+  <div style="font-size:8pt;color:#A3ACB1;padding:6px 0 16px">TeamLab Planets a las 8:00: descalzos, agua iluminada y flores infinitas. Unos 90 minutos.</div>
+
+  <div style="display:grid;grid-template-columns:1.05in 1fr;gap:14px 16px;font-size:9.5pt;align-items:start">
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#00C1A2;padding-top:2px">MAÑANA<br>8:00</div>
+    <div style="padding-bottom:14px;border-bottom:1px solid #EBEBEB">
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">TeamLab Planets TOKYO <span style="font-size:8pt;font-weight:500;color:#00C1A2;letter-spacing:.08em">CONFIRMADO · 3 ADULTOS</span></div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">Metro Shibuya a Toyosu por Fukutoshin y Yurakucho, unos 30 min y ¥300. Arte digital inmersivo: agua, luz, flores infinitas. Llevar calcetines extra.</div>
+    </div>
+
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#5D79FF;padding-top:2px">MEDIA MAÑANA<br>9:30–14:00</div>
+    <div style="padding-bottom:14px;border-bottom:1px solid #EBEBEB">
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Tsukiji Market <span style="font-size:8pt;font-weight:500;color:#00C1A2;letter-spacing:.08em">GRATIS</span></div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">A 5 min de Toyosu. Los mejores desayunos de mariscos del mundo: tamagoyaki, sashimi al momento, ostiones, nigiri de atún.</div>
+      <div style="font-weight:600;color:#0B132B;margin-top:8px">Ginza</div>
+      <div style="font-weight:300;line-height:1.6">15 min a pie. UNIQLO flagship, Apple Store, MUJI. Almuerzo en la zona.</div>
+    </div>
+
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#0B132B;padding-top:2px">TARDE<br>16:30</div>
+    <div>
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Shibuya Sky <span style="font-size:8pt;font-weight:500;color:#0B132B;letter-spacing:.08em">RESERVAR ~6 OCT</span></div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">Terraza exterior a 230 m. El atardecer cae cerca de las 17:10 y es la mejor foto del viaje. Después: última cena en Shibuya.</div>
+      <div style="font-weight:300;font-style:italic;color:#A3ACB1;margin-top:6px">Esta noche se empaca todo y se avisa en recepción. Mañana hay que salir del hotel a las 08:30.</div>
+    </div>
+  </div>
+
+  <div style="margin-top:auto;padding-top:12px;border-top:1px solid #EBEBEB;display:flex;justify-content:space-between;font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#A3ACB1">
+    <span>DÍA 4 · TEAMLAB, TSUKIJI, SHIBUYA SKY</span><span>11</span>
+  </div>
+</section>
+
+<section id="p12" data-screen-label="12 Día 5 Nozomi" style="scroll-margin-top:118px;border-radius:14px;box-shadow:0 6px 40px rgba(11,19,43,.10);padding:min(0.62in,4.8vw) min(0.64in,4.9vw) min(0.5in,3.8vw);display:flex;flex-direction:column;font-family:Inter,sans-serif;color:#172933;background:#fff;overflow:hidden">
+  <div style="display:flex;justify-content:space-between;align-items:baseline">
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.16em;color:#5D79FF">TOKIO → KIOTO · DÍA 5 · MIÉ 21 OCT</div>
+    <div style="font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#00C1A2;border:1px solid #00C1A2;padding:2px 7px">SHINKANSEN CONFIRMADO · #96703</div>
+  </div>
+  <div style="font-family:Poppins,sans-serif;font-size:26pt;font-weight:700;color:#0B132B;line-height:1.1;margin:8px 0 16px">Check-out y Nozomi Green Car de las 09:30</div>
+
+  <div style="display:flex;align-items:stretch;gap:0;border:1px solid #EBEBEB;margin-bottom:18px">
+    <div style="flex:1;padding:14px 16px">
+      <div style="font-size:8pt;font-weight:500;letter-spacing:.14em;color:#5D79FF">TOKIO</div>
+      <div style="font-family:Poppins,sans-serif;font-size:20pt;font-weight:700;color:#0B132B;line-height:1.2">09:30</div>
+      <div style="font-size:8.5pt;font-weight:300">Tokyo Station · andenes 14–19</div>
+    </div>
+    <div style="flex:1.3;padding:14px 16px;background:#F4F6F8;text-align:center">
+      <div style="font-size:9pt;font-weight:600;color:#0B132B">Nozomi · Green Car</div>
+      <div style="font-size:8.5pt;font-weight:300;line-height:1.6">2 h 15 min · ¥23,750 × 3 = ¥71,250<br>Order #96703 · asientos lado D</div>
+    </div>
+    <div style="flex:1;padding:14px 16px;text-align:right">
+      <div style="font-size:8pt;font-weight:500;letter-spacing:.14em;color:#00C1A2">KIOTO</div>
+      <div style="font-family:Poppins,sans-serif;font-size:20pt;font-weight:700;color:#0B132B;line-height:1.2">~11:45</div>
+      <div style="font-size:8.5pt;font-weight:300">Kyoto Station</div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1.05in 1fr;gap:14px 16px;font-size:9.5pt;align-items:start">
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#5D79FF;padding-top:2px">7:00</div>
+    <div style="padding-bottom:14px;border-bottom:1px solid #EBEBEB">
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Desayuno y check-out express</div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">En el hotel o en el conbini. Las maletas ya quedaron listas anoche.</div>
+    </div>
+
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#5D79FF;padding-top:2px">8:30</div>
+    <div style="padding-bottom:14px;border-bottom:1px solid #EBEBEB">
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">JR Yamanote a Tokyo Station</div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">Shibuya → Tokyo Station, unos 25 min y ¥210. Seguir las señales naranjas de "Tokaido Shinkansen", andenes 14 a 19. Estar en el andén 15 minutos antes.</div>
+    </div>
+
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#00C1A2;padding-top:2px">9:30</div>
+    <div>
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Tokyo → Kyoto, 2 h 15 min</div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">Asientos lado D, ventana derecha: el <strong style="font-weight:600">Monte Fuji</strong> aparece unos 40 minutos después de salir. No dormirse en ese tramo.</div>
+    </div>
+  </div>
+
+  <div style="height:min(2.5in,38.5vw);border-radius:5px;overflow:hidden;box-shadow:0 4px 60px rgba(28,37,65,.05);position:relative;margin-top:18px">
+    <image-slot id="jp-d5-fuji" shape="rounded" radius="5" placeholder="Foto del Monte Fuji desde el shinkansen, o del andén en Tokyo Station"></image-slot>
+  </div>
+  <div style="font-size:8pt;color:#A3ACB1;padding:6px 0 0">La ventana derecha, a los 40 minutos de salir.</div>
+
+  <div style="margin-top:auto;padding-top:12px;border-top:1px solid #EBEBEB;display:flex;justify-content:space-between;font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#A3ACB1">
+    <span>DÍA 5 · NOZOMI A KIOTO</span><span>12</span>
+  </div>
+</section>
+
+<section id="p13" data-screen-label="13 Kioto" style="scroll-margin-top:118px;border-radius:14px;box-shadow:0 6px 40px rgba(11,19,43,.10);padding:0;position:relative;overflow:hidden;background:#0B132B;font-family:Inter,sans-serif">
+  <img src="img/07.jpg" alt="Kinkaku-ji" style="position:absolute;top:0;left:0;width:100%;height:min(4.3in,66.2vw);object-fit:cover;opacity:.68">
+  <div style="position:absolute;top:0;left:0;width:100%;height:min(4.3in,66.2vw);background:linear-gradient(180deg,rgba(11,19,43,.5),rgba(11,19,43,.98))"></div>
+  <div style="position:relative;height:100%;display:flex;flex-direction:column">
+    <div style="padding:min(0.6in,4.6vw) min(0.64in,4.9vw) 0;color:#fff">
+      <div style="font-size:8pt;font-weight:500;letter-spacing:.16em;color:#53F3D7">CIUDAD 2 · 3 NOCHES · HOTEL VISCHIO KYOTO BY GRANVIA</div>
+      <div style="display:flex;align-items:flex-end;gap:18px;margin:10px 0 0">
+        <div style="font-family:Poppins,sans-serif;font-size:52pt;font-weight:700;line-height:.9">KIOTO</div>
+        <div style="font-size:22pt;font-weight:300;color:#53F3D7;padding-bottom:8px">京都</div>
+      </div>
+      <div style="font-size:10pt;font-weight:300;max-width:4.5in;margin-top:12px;line-height:1.6">21 Oct — 24 Oct. Tres días con una sola regla: los templos famosos, antes de las ocho. El hotel está literalmente dentro de Kyoto Station.</div>
+    </div>
+
+    <div style="flex:1;background:#fff;margin-top:min(2.4in,18.5vw);padding:min(0.34in,2.6vw) min(0.64in,4.9vw) min(0.5in,3.8vw);display:flex;flex-direction:column;color:#172933">
+      <div style="font-size:8pt;font-weight:500;letter-spacing:.14em;color:#00C1A2;padding-bottom:7px;border-bottom:1px solid #00C1A2">MAPA DE ZONAS — QUÉ DÍA TOCA CADA UNA</div>
+      <div style="position:relative;height:min(1.85in,28.5vw);background:#F4F6F8;margin:10px 0 16px">
+        <div style="position:absolute;left:8%;top:30%;font-size:8.5pt"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#00C1A2;margin-right:5px"></span>Arashiyama <span style="color:#A3ACB1">D7</span></div>
+        <div style="position:absolute;left:20%;top:12%;font-size:8.5pt"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#00C1A2;margin-right:5px"></span>Kinkaku-ji · Ryoan-ji <span style="color:#A3ACB1">D7</span></div>
+        <div style="position:absolute;left:58%;top:16%;font-size:8.5pt"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#00C1A2;margin-right:5px"></span>Ginkaku-ji · Camino del Filósofo <span style="color:#A3ACB1">D6</span></div>
+        <div style="position:absolute;left:45%;top:40%;font-size:8.5pt"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#00C1A2;margin-right:5px"></span>Nishiki · Pontocho <span style="color:#A3ACB1">D5 D8</span></div>
+        <div style="position:absolute;left:66%;top:52%;font-size:8.5pt"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#00C1A2;margin-right:5px"></span>Gion · Higashiyama <span style="color:#A3ACB1">D5 D6</span></div>
+        <div style="position:absolute;left:70%;top:66%;font-size:8.5pt"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#00C1A2;margin-right:5px"></span>Kiyomizudera <span style="color:#A3ACB1">D6</span></div>
+        <div style="position:absolute;left:38%;top:80%;font-size:8.5pt"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#0B132B;margin-right:5px"></span><strong style="font-weight:600">Kyoto Station · hotel</strong></div>
+        <div style="position:absolute;left:52%;top:88%;font-size:8.5pt"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#00C1A2;margin-right:5px"></span>Fushimi Inari <span style="color:#A3ACB1">D6</span></div>
+        <div style="position:absolute;right:12px;bottom:10px;font-size:7.5pt;color:#A3ACB1">Esquema de posiciones relativas · no a escala</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;font-size:9pt">
+        <div>
+          <div style="font-size:8pt;font-weight:500;letter-spacing:.14em;color:#0B132B;padding-bottom:6px;border-bottom:1px solid #0B132B;margin-bottom:8px">IMPERDIBLES</div>
+          <div style="font-weight:300;line-height:1.85">Los diez mil torii de Fushimi Inari antes de las 7:30<br>El bosque de bambú vacío, a las ocho<br>La plataforma de Kiyomizudera sobre el barranco<br>Sannenzaka y Ninenzaka bajando del templo<br>El reflejo del Pabellón Dorado en el estanque<br>El jardín de rocas de Ryoan-ji<br>Una maiko cruzando Hanamikoji a las cinco</div>
+        </div>
+        <div>
+          <div style="font-size:8pt;font-weight:500;letter-spacing:.14em;color:#0B132B;padding-bottom:6px;border-bottom:1px solid #0B132B;margin-bottom:8px">DÓNDE COMER</div>
+          <div style="font-weight:300;line-height:1.85"><strong style="font-weight:600;color:#0B132B">Kyoto Station</strong> food hall del sótano: ramen tori paitan, obanzai, udon<br><strong style="font-weight:600;color:#0B132B">Nishiki Market</strong> tempura de pulpo, pickles, wagashi<br><strong style="font-weight:600;color:#0B132B">Pontocho</strong> cena junto al canal<br><strong style="font-weight:600;color:#0B132B">Higashiyama</strong> tofu kaiseki o soba al bajar de Kiyomizudera<br><strong style="font-weight:600;color:#0B132B">Arashiyama</strong> almuerzo después del bambú<br><strong style="font-weight:600;color:#0B132B">Isetan</strong> té matcha de origen y wagashi premium para llevar</div>
+        </div>
+      </div>
+
+      <div style="margin-top:auto;padding-top:12px;border-top:1px solid #EBEBEB;display:flex;justify-content:space-between;font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#A3ACB1">
+        <span>KIOTO · 21 — 24 OCT</span><span>13</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="p14" data-screen-label="14 Día 5 Kioto" style="scroll-margin-top:118px;border-radius:14px;box-shadow:0 6px 40px rgba(11,19,43,.10);padding:min(0.62in,4.8vw) min(0.64in,4.9vw) min(0.5in,3.8vw);display:flex;flex-direction:column;font-family:Inter,sans-serif;color:#172933;background:#fff;overflow:hidden">
+  <div style="display:flex;justify-content:space-between;align-items:baseline">
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.16em;color:#00C1A2">KIOTO · DÍA 5 · MIÉ 21 OCT · TARDE</div>
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.1em;color:#A3ACB1">DÍA 5 DE 13</div>
+  </div>
+  <div style="font-family:Poppins,sans-serif;font-size:26pt;font-weight:700;color:#0B132B;line-height:1.1;margin:8px 0 14px">Llegada a Kioto, Nishiki Market y Gion de noche</div>
+
+  <div style="display:flex;gap:10px;align-items:flex-start;background:#F4F6F8;padding:12px 14px;margin-bottom:16px;font-size:9pt">
+    <div style="font-weight:600;color:#00C1A2;white-space:nowrap">Check-in 15:00</div>
+    <div style="font-weight:300;line-height:1.55">Se llega a las 11:45, tres horas antes. Dejar las maletas en los coin lockers del nivel B2 de la estación, ¥400–700 por maleta. El hotel está dentro de Kyoto Station, así que se recogen de camino.</div>
+  </div>
+
+  <div style="height:min(2.5in,38.5vw);border-radius:5px;overflow:hidden;box-shadow:0 4px 60px rgba(28,37,65,.05);position:relative">
+    <image-slot id="jp-d5-gion" shape="rounded" radius="5" placeholder="Foto de Gion o Pontocho de noche"></image-slot>
+  </div>
+  <div style="font-size:8pt;color:#A3ACB1;padding:6px 0 16px">Hanamikoji iluminada, primera noche en Kioto.</div>
+
+  <div style="display:grid;grid-template-columns:1.05in 1fr;gap:14px 16px;font-size:9.5pt;align-items:start">
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#00C1A2;padding-top:2px">LLEGADA<br>11:45–13:00</div>
+    <div style="padding-bottom:14px;border-bottom:1px solid #EBEBEB">
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Kyoto Station</div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">Guardar maletas en los lockers de B2. Almuerzo en el food hall subterráneo: ramen de Kioto tori paitan, obanzai, udon.</div>
+    </div>
+
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#00C1A2;padding-top:2px">TARDE<br>13:00–15:00</div>
+    <div style="padding-bottom:14px;border-bottom:1px solid #EBEBEB">
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Nishiki Market <span style="font-size:8pt;font-weight:500;color:#00C1A2;letter-spacing:.08em">GRATIS</span></div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">El estómago de Kioto: una calle cubierta de 400 m con 130 tiendas. Tempura de pulpo, yuzu, pickles de Kioto, wagashi.</div>
+    </div>
+
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#00C1A2;padding-top:2px">NOCHE<br>17:00–21:00</div>
+    <div>
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Gion, primera noche <span style="font-size:8pt;font-weight:500;color:#00C1A2;letter-spacing:.08em">GRATIS</span></div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">Bus 206 hasta Gion, 15 min y ¥230. Hanamikoji Street iluminada, con alta probabilidad de ver maiko. Cena en el canal de Pontocho.</div>
+      <div style="font-weight:300;font-style:italic;color:#A3ACB1;margin-top:6px">Mañana se madruga: alarma a las 6:00 para tener Fushimi Inari para nosotros.</div>
+    </div>
+  </div>
+
+  <div style="margin-top:auto;padding-top:12px;border-top:1px solid #EBEBEB;display:flex;justify-content:space-between;font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#A3ACB1">
+    <span>DÍA 5 · NISHIKI Y GION</span><span>14</span>
+  </div>
+</section>
+
+<section id="p15" data-screen-label="15 Día 6" style="scroll-margin-top:118px;border-radius:14px;box-shadow:0 6px 40px rgba(11,19,43,.10);padding:min(0.62in,4.8vw) min(0.64in,4.9vw) min(0.5in,3.8vw);display:flex;flex-direction:column;font-family:Inter,sans-serif;color:#172933;background:#fff;overflow:hidden">
+  <div style="display:flex;justify-content:space-between;align-items:baseline">
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.16em;color:#00C1A2">KIOTO · DÍA 6 · JUE 22 OCT</div>
+    <div style="font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#0B132B;border:1px solid #0B132B;padding:2px 7px">ALARMA 6:00</div>
+  </div>
+  <div style="font-family:Poppins,sans-serif;font-size:26pt;font-weight:700;color:#0B132B;line-height:1.1;margin:8px 0 14px">Fushimi Inari al alba, Kiyomizudera y Higashiyama</div>
+
+  <div style="display:flex;align-items:center;gap:7px;flex-wrap:wrap;font-size:8.5pt;padding:10px 12px;background:#F4F6F8;margin-bottom:16px">
+    <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#0B132B"></span><span style="font-weight:600;color:#0B132B">Hotel</span><span style="color:#A3ACB1">6:30</span>
+    <span style="color:#A3ACB1">— 5 min —</span>
+    <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#00C1A2"></span><span style="font-weight:600;color:#0B132B">Fushimi Inari</span><span style="color:#A3ACB1">7:00</span>
+    <span style="color:#A3ACB1">— 25 min bus —</span>
+    <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#00C1A2"></span><span style="font-weight:600;color:#0B132B">Kiyomizudera</span><span style="color:#A3ACB1">10:00</span>
+    <span style="color:#A3ACB1">— 10 min a pie —</span>
+    <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#00C1A2"></span><span style="font-weight:600;color:#0B132B">Sannenzaka</span><span style="color:#A3ACB1">11:30</span>
+    <span style="color:#A3ACB1">— 15 min a pie —</span>
+    <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#00C1A2"></span><span style="font-weight:600;color:#0B132B">Gion</span><span style="color:#A3ACB1">15:00</span>
+  </div>
+
+  <div style="height:min(2.4in,36.9vw);border-radius:5px;overflow:hidden;box-shadow:0 4px 60px rgba(28,37,65,.05)"><img src="img/05.jpg" alt="Fushimi Inari" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+  <div style="font-size:8pt;color:#A3ACB1;padding:6px 0 16px">Fushimi Inari a las 7:00: los diez mil torii, completamente solos y con luz dorada.</div>
+
+  <div style="display:grid;grid-template-columns:1.05in 1fr;gap:14px 16px;font-size:9.5pt;align-items:start">
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#00C1A2;padding-top:2px">MUY TEMPRANO<br>7:00–10:00</div>
+    <div style="padding-bottom:14px;border-bottom:1px solid #EBEBEB">
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Fushimi Inari Taisha <span style="font-size:8pt;font-weight:500;color:#00C1A2;letter-spacing:.08em">GRATIS</span></div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">JR Nara Line hasta Inari, 5 min y ¥150. Los diez mil torii naranjas <strong style="font-weight:600">antes de las 7:30</strong>: nadie más, luz dorada entre los pilares. Subir hasta Yotsutsuji, a 233 m, por la vista de toda Kioto.</div>
+      <div style="font-weight:300;font-style:italic;color:#A3ACB1;margin-top:6px">A las nueve llegan los autobuses de tour. La diferencia entre las siete y las nueve es absoluta.</div>
+    </div>
+
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#00C1A2;padding-top:2px">MAÑANA<br>10:00–14:00</div>
+    <div style="padding-bottom:14px;border-bottom:1px solid #EBEBEB">
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Kiyomizudera <span style="font-size:8pt;font-weight:500;color:#5D79FF;letter-spacing:.08em">¥500</span></div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">Bus desde Inari, unos 25 min y ¥230. La plataforma de madera sobre el barranco, con los primeros colores otoñales.</div>
+      <div style="font-weight:600;color:#0B132B;margin-top:8px">Sannenzaka y Ninenzaka <span style="font-size:8pt;font-weight:500;color:#00C1A2;letter-spacing:.08em">GRATIS</span></div>
+      <div style="font-weight:300;line-height:1.6">Las calles empedradas más bellas de Kioto, bajando del templo. Almuerzo de tofu kaiseki o soba.</div>
+    </div>
+
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#00C1A2;padding-top:2px">TARDE-NOCHE<br>14:00–21:00</div>
+    <div>
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Gion y Higashiyama <span style="font-size:8pt;font-weight:500;color:#00C1A2;letter-spacing:.08em">GRATIS</span></div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">Hanamikoji Street, el canal Shirakawa, Yasaka Shrine. Entre las cuatro y las cinco es cuando las maiko salen a trabajar.</div>
+      <div style="font-weight:600;color:#0B132B;margin-top:8px">Camino del Filósofo <span style="font-size:8pt;font-weight:500;color:#00C1A2;letter-spacing:.08em">GRATIS</span></div>
+      <div style="font-weight:300;line-height:1.6">Dos kilómetros de canal entre Nanzenji y Ginkakuji. Cena en una izakaya del barrio.</div>
+    </div>
+  </div>
+
+  <div style="margin-top:auto;padding-top:12px;border-top:1px solid #EBEBEB;display:flex;justify-content:space-between;font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#A3ACB1">
+    <span>DÍA 6 · FUSHIMI INARI AL ALBA</span><span>15</span>
+  </div>
+</section>
+
+<section id="p16" data-screen-label="16 Día 7" style="scroll-margin-top:118px;border-radius:14px;box-shadow:0 6px 40px rgba(11,19,43,.10);padding:min(0.62in,4.8vw) min(0.64in,4.9vw) min(0.5in,3.8vw);display:flex;flex-direction:column;font-family:Inter,sans-serif;color:#172933;background:#fff;overflow:hidden">
+  <div style="display:flex;justify-content:space-between;align-items:baseline">
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.16em;color:#00C1A2">KIOTO · DÍA 7 · VIE 23 OCT</div>
+    <div style="font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#0B132B;border:1px solid #0B132B;padding:2px 7px">BAMBÚ ANTES DE LAS 8:00</div>
+  </div>
+  <div style="font-family:Poppins,sans-serif;font-size:26pt;font-weight:700;color:#0B132B;line-height:1.1;margin:8px 0 14px">Arashiyama, el Pabellón Dorado y Ryoan-ji</div>
+
+  <div style="display:flex;align-items:center;gap:7px;flex-wrap:wrap;font-size:8.5pt;padding:10px 12px;background:#F4F6F8;margin-bottom:16px">
+    <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#0B132B"></span><span style="font-weight:600;color:#0B132B">Hotel</span><span style="color:#A3ACB1">7:00</span>
+    <span style="color:#A3ACB1">— 30 min bus —</span>
+    <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#00C1A2"></span><span style="font-weight:600;color:#0B132B">Arashiyama</span><span style="color:#A3ACB1">8:00</span>
+    <span style="color:#A3ACB1">— 20 min bus —</span>
+    <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#00C1A2"></span><span style="font-weight:600;color:#0B132B">Kinkaku-ji</span><span style="color:#A3ACB1">12:30</span>
+    <span style="color:#A3ACB1">— 10 min a pie —</span>
+    <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#00C1A2"></span><span style="font-weight:600;color:#0B132B">Ryoan-ji</span><span style="color:#A3ACB1">14:00</span>
+    <span style="color:#A3ACB1">— 30 min bus —</span>
+    <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#0B132B"></span><span style="font-weight:600;color:#0B132B">Kyoto Station</span><span style="color:#A3ACB1">15:30</span>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+    <div style="height:min(2.15in,33.1vw);border-radius:5px;overflow:hidden;box-shadow:0 4px 60px rgba(28,37,65,.05)"><img src="img/06.jpg" alt="Bosque de bambú de Arashiyama" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+    <div style="height:min(2.15in,33.1vw);border-radius:5px;overflow:hidden;box-shadow:0 4px 60px rgba(28,37,65,.05)"><img src="img/07.jpg" alt="Kinkaku-ji" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:8pt;color:#A3ACB1;padding:6px 0 16px">
+    <div>El bambú a las ocho, con la luz del amanecer.</div>
+    <div>El Pabellón Dorado y su reflejo en el estanque.</div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1.05in 1fr;gap:14px 16px;font-size:9.5pt;align-items:start">
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#00C1A2;padding-top:2px">TEMPRANO<br>8:00–12:00</div>
+    <div style="padding-bottom:14px;border-bottom:1px solid #EBEBEB">
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Bosque de bambú <span style="font-size:8pt;font-weight:500;color:#00C1A2;letter-spacing:.08em">GRATIS</span></div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">Bus 28 desde Kyoto Station, 30 min y ¥230. Llegar antes de las ocho: el bambú vacío con la luz del amanecer es irreal. Después Tenryu-ji <span style="font-weight:500;color:#5D79FF">¥500</span> y almuerzo en Arashiyama.</div>
+      <div style="font-weight:300;font-style:italic;color:#A3ACB1;margin-top:6px">A las nueve ya están los grupos. La diferencia entre las ocho y las diez es enorme.</div>
+    </div>
+
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#00C1A2;padding-top:2px">MEDIODÍA<br>12:30–15:00</div>
+    <div style="padding-bottom:14px;border-bottom:1px solid #EBEBEB">
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Kinkaku-ji <span style="font-size:8pt;font-weight:500;color:#5D79FF;letter-spacing:.08em">¥500</span></div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">Bus de unos 20 min. El templo dorado: el reflejo en el estanque con los colores otoñales es extraordinario.</div>
+      <div style="font-weight:600;color:#0B132B;margin-top:8px">Ryoan-ji <span style="font-size:8pt;font-weight:500;color:#5D79FF;letter-spacing:.08em">¥600</span></div>
+      <div style="font-weight:300;line-height:1.6">A 10 min caminando. El jardín zen de rocas más famoso del mundo, meditativo y silencioso.</div>
+    </div>
+
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#00C1A2;padding-top:2px">TARDE<br>15:30–20:00</div>
+    <div>
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Compras en Kyoto Station</div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">Isetan dentro de la estación: té matcha de origen, wagashi premium, sake, cerámica. También UNIQLO y GU.</div>
+      <div style="font-weight:300;font-style:italic;color:#A3ACB1;margin-top:6px">Última cena en Pontocho y maletas listas para Osaka.</div>
+    </div>
+  </div>
+
+  <div style="margin-top:auto;padding-top:12px;border-top:1px solid #EBEBEB;display:flex;justify-content:space-between;font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#A3ACB1">
+    <span>DÍA 7 · ARASHIYAMA Y KINKAKU-JI</span><span>16</span>
+  </div>
+</section>
+
+<section id="p17" data-screen-label="17 Día 8 a Osaka" style="scroll-margin-top:118px;border-radius:14px;box-shadow:0 6px 40px rgba(11,19,43,.10);padding:min(0.62in,4.8vw) min(0.64in,4.9vw) min(0.5in,3.8vw);display:flex;flex-direction:column;font-family:Inter,sans-serif;color:#172933;background:#fff;overflow:hidden">
+  <div style="display:flex;justify-content:space-between;align-items:baseline">
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.16em;color:#00C1A2">KIOTO → OSAKA · DÍA 8 · SÁB 24 OCT · MAÑANA</div>
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.1em;color:#A3ACB1">DÍA 8 DE 13</div>
+  </div>
+  <div style="font-family:Poppins,sans-serif;font-size:26pt;font-weight:700;color:#0B132B;line-height:1.1;margin:8px 0 16px">Check-out, última pasada por Nishiki y tren a Osaka</div>
+
+  <div style="display:flex;align-items:stretch;border:1px solid #EBEBEB;margin-bottom:18px">
+    <div style="flex:1;padding:14px 16px">
+      <div style="font-size:8pt;font-weight:500;letter-spacing:.14em;color:#00C1A2">KIOTO</div>
+      <div style="font-family:Poppins,sans-serif;font-size:20pt;font-weight:700;color:#0B132B;line-height:1.2">~11:30</div>
+      <div style="font-size:8.5pt;font-weight:300">Kyoto Station · andenes 4–7</div>
+    </div>
+    <div style="flex:1.3;padding:14px 16px;background:#F4F6F8;text-align:center">
+      <div style="font-size:9pt;font-weight:600;color:#0B132B">JR Special Rapid</div>
+      <div style="font-size:8.5pt;font-weight:300;line-height:1.6">30 min · ¥580 × 3 = ¥1,740<br>Sin reserva · Suica válida · cada 15 min</div>
+    </div>
+    <div style="flex:1;padding:14px 16px;text-align:right">
+      <div style="font-size:8pt;font-weight:500;letter-spacing:.14em;color:#0B132B">OSAKA</div>
+      <div style="font-family:Poppins,sans-serif;font-size:20pt;font-weight:700;color:#0B132B;line-height:1.2">~12:00</div>
+      <div style="font-size:8.5pt;font-weight:300">Osaka Station (JR)</div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1.05in 1fr;gap:14px 16px;font-size:9.5pt;align-items:start">
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#00C1A2;padding-top:2px">8:30</div>
+    <div style="padding-bottom:14px;border-bottom:1px solid #EBEBEB">
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Check-out</div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">El hotel guarda las maletas. Desayuno en el food hall de la estación.</div>
+    </div>
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#00C1A2;padding-top:2px">9:00–11:00</div>
+    <div style="padding-bottom:14px;border-bottom:1px solid #EBEBEB">
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Nishiki Market, última pasada</div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">Comprar yuzu kosho, pickles de Kioto y matcha ceremonial. Es más barato aquí que en el aeropuerto.</div>
+    </div>
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#0B132B;padding-top:2px">11:30</div>
+    <div>
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">JR Special Rapid a Osaka</div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">30 min y ¥580 por persona, sin reserva, sale cada 15 minutos. Llegada cerca de las 12:00, cuatro horas antes del check-in en Namba.</div>
+    </div>
+  </div>
+
+  <div style="height:min(2.5in,38.5vw);border-radius:5px;overflow:hidden;box-shadow:0 4px 60px rgba(28,37,65,.05);position:relative;margin-top:18px">
+    <image-slot id="jp-d8-nishiki" shape="rounded" radius="5" placeholder="Foto de Nishiki Market o del andén de Kyoto Station"></image-slot>
+  </div>
+
+  <div style="margin-top:auto;padding-top:12px;border-top:1px solid #EBEBEB;display:flex;justify-content:space-between;font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#A3ACB1">
+    <span>DÍA 8 · TREN A OSAKA</span><span>17</span>
+  </div>
+</section>
+
+<section id="p18" data-screen-label="18 Osaka" style="scroll-margin-top:118px;border-radius:14px;box-shadow:0 6px 40px rgba(11,19,43,.10);padding:0;position:relative;overflow:hidden;background:#0B132B;font-family:Inter,sans-serif">
+  <img src="img/08.jpg" alt="Dotonbori" style="position:absolute;top:0;left:0;width:100%;height:min(4.3in,66.2vw);object-fit:cover;opacity:.68">
+  <div style="position:absolute;top:0;left:0;width:100%;height:min(4.3in,66.2vw);background:linear-gradient(180deg,rgba(11,19,43,.5),rgba(11,19,43,.98))"></div>
+  <div style="position:relative;height:100%;display:flex;flex-direction:column">
+    <div style="padding:min(0.6in,4.6vw) min(0.64in,4.9vw) 0;color:#fff">
+      <div style="font-size:8pt;font-weight:500;letter-spacing:.16em;color:#53F3D7">CIUDAD 3 · 5 NOCHES · PLUM HOTEL NAMBA</div>
+      <div style="display:flex;align-items:flex-end;gap:18px;margin:10px 0 0">
+        <div style="font-family:Poppins,sans-serif;font-size:52pt;font-weight:700;line-height:.9">OSAKA</div>
+        <div style="font-size:22pt;font-weight:300;color:#53F3D7;padding-bottom:8px">大阪</div>
+      </div>
+      <div style="font-size:10pt;font-weight:300;max-width:4.5in;margin-top:12px;line-height:1.6">24 Oct — 29 Oct. La base para todo lo demás: Dotonbori a pie, Universal a 20 minutos y Nara por Kintetsu desde la misma estación.</div>
+    </div>
+
+    <div style="flex:1;background:#fff;margin-top:min(2.4in,18.5vw);padding:min(0.34in,2.6vw) min(0.64in,4.9vw) min(0.5in,3.8vw);display:flex;flex-direction:column;color:#172933">
+      <div style="font-size:8pt;font-weight:500;letter-spacing:.14em;color:#0B132B;padding-bottom:7px;border-bottom:1px solid #0B132B">MAPA DE ZONAS — QUÉ DÍA TOCA CADA UNA</div>
+      <div style="position:relative;height:min(1.85in,28.5vw);background:#F4F6F8;margin:10px 0 16px">
+        <div style="position:absolute;left:34%;top:12%;font-size:8.5pt"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#5D79FF;margin-right:5px"></span>Umeda · Sky Building <span style="color:#A3ACB1">D10</span></div>
+        <div style="position:absolute;left:74%;top:26%;font-size:8.5pt"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#5D79FF;margin-right:5px"></span>Osaka Castle <span style="color:#A3ACB1">D9</span></div>
+        <div style="position:absolute;left:8%;top:34%;font-size:8.5pt"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#00C1A2;margin-right:5px"></span>Universal City <span style="color:#A3ACB1">D11</span></div>
+        <div style="position:absolute;left:40%;top:54%;font-size:8.5pt"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#0B132B;margin-right:5px"></span><strong style="font-weight:600">Namba · Dotonbori · hotel</strong> <span style="color:#A3ACB1">D8 D13</span></div>
+        <div style="position:absolute;left:56%;top:70%;font-size:8.5pt"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#5D79FF;margin-right:5px"></span>Kuromon <span style="color:#A3ACB1">D9</span></div>
+        <div style="position:absolute;left:30%;top:84%;font-size:8.5pt"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#5D79FF;margin-right:5px"></span>Shinsekai · Tsutenkaku <span style="color:#A3ACB1">D9</span></div>
+        <div style="position:absolute;left:78%;top:72%;font-size:8.5pt"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#00C1A2;margin-right:5px"></span>Nara <span style="color:#A3ACB1">D12</span></div>
+        <div style="position:absolute;right:12px;bottom:10px;font-size:7.5pt;color:#A3ACB1">Esquema de posiciones relativas · no a escala</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;font-size:9pt">
+        <div>
+          <div style="font-size:8pt;font-weight:500;letter-spacing:.14em;color:#0B132B;padding-bottom:6px;border-bottom:1px solid #0B132B;margin-bottom:8px">IMPERDIBLES</div>
+          <div style="font-weight:300;line-height:1.85">El Glico Running Man desde Ebisubashi, de noche<br>La terraza flotante del Umeda Sky Building<br>El panorama 360° del castillo, piso 8<br>Kushikatsu en Shinsekai, sin remojar dos veces<br>Hozenji Yokocho: musgo e izakayas centenarias<br>Los 800 ciervos de Nara<br>El sótano de comida de Hankyu Umeda</div>
+        </div>
+        <div>
+          <div style="font-size:8pt;font-weight:500;letter-spacing:.14em;color:#0B132B;padding-bottom:6px;border-bottom:1px solid #0B132B;margin-bottom:8px">DÓNDE COMER</div>
+          <div style="font-weight:300;line-height:1.85"><strong style="font-weight:600;color:#0B132B">Wanaka</strong> takoyaki, ¥600 — el primero al llegar<br><strong style="font-weight:600;color:#0B132B">Chibo</strong> okonomiyaki en Dotonbori<br><strong style="font-weight:600;color:#0B132B">Daruma</strong> kushikatsu<br><strong style="font-weight:600;color:#0B132B">Kuromon Market</strong> ostiones frescos y wagyu en palito<br><strong style="font-weight:600;color:#0B132B">Kani Doraku</strong> cangrejo, cena de despedida<br><strong style="font-weight:600;color:#0B132B">Nara</strong> kakinoha-zushi, la especialidad local</div>
+        </div>
+      </div>
+
+      <div style="margin-top:auto;padding-top:12px;border-top:1px solid #EBEBEB;display:flex;justify-content:space-between;font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#A3ACB1">
+        <span>OSAKA · 24 — 29 OCT</span><span>18</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="p19" data-screen-label="19 Día 8 Osaka" style="scroll-margin-top:118px;border-radius:14px;box-shadow:0 6px 40px rgba(11,19,43,.10);padding:min(0.62in,4.8vw) min(0.64in,4.9vw) min(0.5in,3.8vw);display:flex;flex-direction:column;font-family:Inter,sans-serif;color:#172933;background:#fff;overflow:hidden">
+  <div style="display:flex;justify-content:space-between;align-items:baseline">
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.16em;color:#0B132B">OSAKA · DÍA 8 · SÁB 24 OCT · TARDE</div>
+    <div style="font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#00C1A2;border:1px solid #00C1A2;padding:2px 7px">CHECK-IN 16:00</div>
+  </div>
+  <div style="font-family:Poppins,sans-serif;font-size:26pt;font-weight:700;color:#0B132B;line-height:1.1;margin:8px 0 14px">Primera tarde en Namba y primera noche en Dotonbori</div>
+
+  <div style="height:min(2.5in,38.5vw);border-radius:5px;overflow:hidden;box-shadow:0 4px 60px rgba(28,37,65,.05);position:relative">
+    <image-slot id="jp-d8-doton" shape="rounded" radius="5" placeholder="Foto del canal de Dotonbori con el Glico Running Man"></image-slot>
+  </div>
+  <div style="font-size:8pt;color:#A3ACB1;padding:6px 0 16px">Dotonbori de noche: neón, takoyaki y ruido. Esto es Osaka.</div>
+
+  <div style="display:grid;grid-template-columns:1.05in 1fr;gap:14px 16px;font-size:9.5pt;align-items:start">
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#0B132B;padding-top:2px">LLEGADA<br>12:00</div>
+    <div style="padding-bottom:14px;border-bottom:1px solid #EBEBEB">
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Llegar a Namba</div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">Dejar las maletas en la consigna de Osaka Station. Metro Midosuji hasta Namba, 3 min y ¥240. Check-in del hotel a las 16:00.</div>
+    </div>
+
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#0B132B;padding-top:2px">TARDE LIBRE<br>12:00–16:00</div>
+    <div style="padding-bottom:14px;border-bottom:1px solid #EBEBEB">
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Primera vez en Dotonbori <span style="font-size:8pt;font-weight:500;color:#00C1A2;letter-spacing:.08em">GRATIS</span></div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">Glico Running Man, el canal, Ebisubashi Bridge. <strong style="font-weight:600">Takoyaki en Wanaka</strong>, ¥600. Primera pasada por Kuromon Market y Shinsaibashi.</div>
+    </div>
+
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#0B132B;padding-top:2px">NOCHE<br>18:00–21:00</div>
+    <div>
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Dotonbori de noche</div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">Las luces de neón, el takoyaki, el ruido. Cena: okonomiyaki en Chibo o kushikatsu en Daruma.</div>
+      <div style="font-weight:300;font-style:italic;color:#A3ACB1;margin-top:6px">Osaka tiene la mayor densidad de restaurantes por metro cuadrado del mundo. Nunca se come mal.</div>
+    </div>
+  </div>
+
+  <div style="margin-top:auto;padding-top:12px;border-top:1px solid #EBEBEB;display:flex;justify-content:space-between;font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#A3ACB1">
+    <span>DÍA 8 · PRIMERA NOCHE EN DOTONBORI</span><span>19</span>
+  </div>
+</section>
+
+<section id="p20" data-screen-label="20 Día 9" style="scroll-margin-top:118px;border-radius:14px;box-shadow:0 6px 40px rgba(11,19,43,.10);padding:min(0.62in,4.8vw) min(0.64in,4.9vw) min(0.5in,3.8vw);display:flex;flex-direction:column;font-family:Inter,sans-serif;color:#172933;background:#fff;overflow:hidden">
+  <div style="display:flex;justify-content:space-between;align-items:baseline">
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.16em;color:#0B132B">OSAKA · DÍA 9 · DOM 25 OCT</div>
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.1em;color:#A3ACB1">DÍA 9 DE 13</div>
+  </div>
+  <div style="font-family:Poppins,sans-serif;font-size:26pt;font-weight:700;color:#0B132B;line-height:1.1;margin:8px 0 14px">El castillo, Shinsekai y Kuromon Market</div>
+
+  <div style="display:flex;align-items:center;gap:7px;flex-wrap:wrap;font-size:8.5pt;padding:10px 12px;background:#F4F6F8;margin-bottom:16px">
+    <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#0B132B"></span><span style="font-weight:600;color:#0B132B">Namba</span><span style="color:#A3ACB1">9:00</span>
+    <span style="color:#A3ACB1">— 15 min —</span>
+    <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#5D79FF"></span><span style="font-weight:600;color:#0B132B">Osaka Castle</span><span style="color:#A3ACB1">9:30</span>
+    <span style="color:#A3ACB1">— 20 min —</span>
+    <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#5D79FF"></span><span style="font-weight:600;color:#0B132B">Shinsekai</span><span style="color:#A3ACB1">13:00</span>
+    <span style="color:#A3ACB1">— 10 min a pie —</span>
+    <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#5D79FF"></span><span style="font-weight:600;color:#0B132B">Kuromon</span><span style="color:#A3ACB1">15:30</span>
+  </div>
+
+  <div style="height:min(2.4in,36.9vw);border-radius:5px;overflow:hidden;box-shadow:0 4px 60px rgba(28,37,65,.05)"><img src="img/09.jpg" alt="Castillo de Osaka" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+  <div style="font-size:8pt;color:#A3ACB1;padding:6px 0 16px">El castillo con los colores otoñales del jardín Nishinomaru.</div>
+
+  <div style="display:grid;grid-template-columns:1.05in 1fr;gap:14px 16px;font-size:9.5pt;align-items:start">
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#0B132B;padding-top:2px">MAÑANA<br>9:30–13:00</div>
+    <div style="padding-bottom:14px;border-bottom:1px solid #EBEBEB">
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Osaka Castle <span style="font-size:8pt;font-weight:500;color:#5D79FF;letter-spacing:.08em">¥600</span></div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">Metro hasta Tanimachi 4-chome. Fortaleza del siglo XVI y panorama de 360° desde el piso 8. El jardín Nishinomaru con colores otoñales.</div>
+    </div>
+
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#0B132B;padding-top:2px">MEDIODÍA<br>13:00–16:00</div>
+    <div style="padding-bottom:14px;border-bottom:1px solid #EBEBEB">
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Shinsekai</div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">Kushikatsu fritos, con la regla sagrada: nunca remojar dos veces en la salsa común. Tsutenkaku Tower <span style="font-weight:500;color:#5D79FF">¥800</span>. El barrio del "Nuevo Mundo" de los años veinte.</div>
+    </div>
+
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#0B132B;padding-top:2px">TARDE<br>16:00–19:00</div>
+    <div>
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Kuromon Market <span style="font-size:8pt;font-weight:500;color:#00C1A2;letter-spacing:.08em">GRATIS</span></div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">Ciento setenta puestos en 580 m: ostiones frescos, wagyu en palito. De noche, Hozenji Yokocho — el callejón del musgo y las izakayas centenarias.</div>
+    </div>
+  </div>
+
+  <div style="margin-top:auto;padding-top:12px;border-top:1px solid #EBEBEB;display:flex;justify-content:space-between;font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#A3ACB1">
+    <span>DÍA 9 · CASTILLO Y SHINSEKAI</span><span>20</span>
+  </div>
+</section>
+
+<section id="p21" data-screen-label="21 Día 10" style="scroll-margin-top:118px;border-radius:14px;box-shadow:0 6px 40px rgba(11,19,43,.10);padding:min(0.62in,4.8vw) min(0.64in,4.9vw) min(0.5in,3.8vw);display:flex;flex-direction:column;font-family:Inter,sans-serif;color:#172933;background:#fff;overflow:hidden">
+  <div style="display:flex;justify-content:space-between;align-items:baseline">
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.16em;color:#0B132B">OSAKA · DÍA 10 · LUN 26 OCT</div>
+    <div style="font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#0B132B;border:1px solid #0B132B;padding:2px 7px">DORMIR A LAS 22:00</div>
+  </div>
+  <div style="font-family:Poppins,sans-serif;font-size:26pt;font-weight:700;color:#0B132B;line-height:1.1;margin:8px 0 14px">Umeda: la gran jornada de compras y el Sky Building</div>
+
+  <div style="height:min(2.5in,38.5vw);border-radius:5px;overflow:hidden;box-shadow:0 4px 60px rgba(28,37,65,.05);position:relative">
+    <image-slot id="jp-d10" shape="rounded" radius="5" placeholder="Foto del Umeda Sky Building o de la terraza flotante al atardecer"></image-slot>
+  </div>
+  <div style="font-size:8pt;color:#A3ACB1;padding:6px 0 16px">La terraza flotante, dos torres unidas por arriba. Atardecer cerca de las 17:10.</div>
+
+  <div style="display:grid;grid-template-columns:1.05in 1fr;gap:14px 16px;font-size:9.5pt;align-items:start">
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#0B132B;padding-top:2px">MAÑANA<br>10:00–14:00</div>
+    <div style="padding-bottom:14px;border-bottom:1px solid #EBEBEB">
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Umeda, compras</div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">Metro Midosuji hasta Umeda, 10 min. Grand Front Osaka para lo premium, Hankyu Department Store — su sótano de comida es de los mejores de Japón — y UNIQLO, GU, MUJI.</div>
+      <div style="font-weight:300;font-style:italic;color:#A3ACB1;margin-top:6px">El sótano de Hankyu Umeda merece una hora completa nada más para verlo.</div>
+    </div>
+
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#0B132B;padding-top:2px">TARDE<br>14:00–17:00</div>
+    <div style="padding-bottom:14px;border-bottom:1px solid #EBEBEB">
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Más compras</div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">Lucua Osaka, HEP Five con su noria en el techo del mall <span style="font-weight:500;color:#5D79FF">¥600</span>, y Yodobashi Umeda: electrónica en nueve pisos, tax-free.</div>
+    </div>
+
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#0B132B;padding-top:2px">TARDE-NOCHE<br>17:00</div>
+    <div>
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Umeda Sky Building <span style="font-size:8pt;font-weight:500;color:#5D79FF;letter-spacing:.08em">¥2,000</span></div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">Dos torres unidas arriba, con terraza flotante circular. El atardecer cae cerca de las 17:10, así que llegar a las 16:45.</div>
+      <div style="font-weight:300;font-style:italic;color:#A3ACB1;margin-top:6px">Mañana es Universal: cenar temprano y dormir a las diez.</div>
+    </div>
+  </div>
+
+  <div style="margin-top:auto;padding-top:12px;border-top:1px solid #EBEBEB;display:flex;justify-content:space-between;font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#A3ACB1">
+    <span>DÍA 10 · UMEDA Y COMPRAS</span><span>21</span>
+  </div>
+</section>
+
+<section id="p22" data-screen-label="22 Día 11 USJ" style="scroll-margin-top:118px;border-radius:14px;box-shadow:0 6px 40px rgba(11,19,43,.10);padding:min(0.62in,4.8vw) min(0.64in,4.9vw) min(0.5in,3.8vw);display:flex;flex-direction:column;font-family:Inter,sans-serif;color:#172933;background:#fff;overflow:hidden">
+  <div style="display:flex;justify-content:space-between;align-items:baseline">
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.16em;color:#0B132B">OSAKA · DÍA 11 · MAR 27 OCT</div>
+    <div style="font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#00C1A2;border:1px solid #00C1A2;padding:2px 7px">TICKETS + EXPRESSPASS CONFIRMADOS</div>
+  </div>
+  <div style="font-family:Poppins,sans-serif;font-size:26pt;font-weight:700;color:#0B132B;line-height:1.1;margin:8px 0 14px">Universal Studios Japan, día completo</div>
+
+  <div style="display:flex;gap:10px;align-items:flex-start;background:#F4F6F8;padding:12px 14px;margin-bottom:16px;font-size:9pt">
+    <div style="font-weight:600;color:#0B132B;white-space:nowrap">Al entrar, primero:</div>
+    <div style="font-weight:300;line-height:1.55">abrir la app de USJ y registrar el <strong style="font-weight:600">timed entry de Super Nintendo World</strong> de inmediato. Es lo único que no se puede resolver después.</div>
+  </div>
+
+  <div style="height:min(2.4in,36.9vw);border-radius:5px;overflow:hidden;box-shadow:0 4px 60px rgba(28,37,65,.05)"><img src="img/10.jpg" alt="Universal Studios Japan" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+  <div style="font-size:8pt;color:#A3ACB1;padding:6px 0 16px">Harry Potter, Nintendo World y Hollywood Dream en un solo día.</div>
+
+  <div style="display:grid;grid-template-columns:1.05in 1fr;gap:14px 16px;font-size:9.5pt;align-items:start">
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#0B132B;padding-top:2px">TRASLADO<br>8:00</div>
+    <div style="padding-bottom:14px;border-bottom:1px solid #EBEBEB">
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Namba → Universal City</div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">JR Osaka Loop Line hasta Nishikujo y JR Yumesaki Line hasta Universal City. Unos 20 min y ¥380. Llegar 30 minutos antes de la apertura.</div>
+    </div>
+
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#0B132B;padding-top:2px">MAÑANA<br>9:00–14:00</div>
+    <div style="padding-bottom:14px;border-bottom:1px solid #EBEBEB">
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Harry Potter</div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">Hogsmeade, el castillo de Hogwarts y Forbidden Journey con ExpressPass. Butterbeer y Chocolate Frog obligatorios.</div>
+      <div style="font-weight:600;color:#0B132B;margin-top:8px">Super Nintendo World</div>
+      <div style="font-weight:300;line-height:1.6">Mario Kart: Koopa's Challenge. La Power-Up Band cuesta ¥3,500 y es la que abre la experiencia completa.</div>
+    </div>
+
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#0B132B;padding-top:2px">TARDE-NOCHE<br>14:00–22:00</div>
+    <div>
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Flying Dinosaur</div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">El mejor roller coaster del parque: usar el ExpressPass a las cuatro de la tarde, cuando baja la fila. Cena en Three Broomsticks o Leaky Cauldron. Regreso cerca de las diez.</div>
+      <div style="font-weight:300;font-style:italic;color:#A3ACB1;margin-top:6px">Llevar power bank, tenis cómodos y una capa para la noche.</div>
+    </div>
+  </div>
+
+  <div style="margin-top:auto;padding-top:12px;border-top:1px solid #EBEBEB;display:flex;justify-content:space-between;font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#A3ACB1">
+    <span>DÍA 11 · UNIVERSAL STUDIOS JAPAN</span><span>22</span>
+  </div>
+</section>
+
+<section id="p23" data-screen-label="23 Día 12 Nara" style="scroll-margin-top:118px;border-radius:14px;box-shadow:0 6px 40px rgba(11,19,43,.10);padding:min(0.62in,4.8vw) min(0.64in,4.9vw) min(0.5in,3.8vw);display:flex;flex-direction:column;font-family:Inter,sans-serif;color:#172933;background:#fff;overflow:hidden">
+  <div style="display:flex;justify-content:space-between;align-items:baseline">
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.16em;color:#0B132B">OSAKA · DÍA 12 · MIÉ 28 OCT</div>
+    <div style="font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#0B132B;border:1px solid #0B132B;padding:2px 7px">ÚLTIMA NOCHE</div>
+  </div>
+  <div style="font-family:Poppins,sans-serif;font-size:26pt;font-weight:700;color:#0B132B;line-height:1.1;margin:8px 0 14px">Nara: los ciervos, Todai-ji y Kasuga Taisha</div>
+
+  <div style="display:flex;align-items:center;gap:7px;flex-wrap:wrap;font-size:8.5pt;padding:10px 12px;background:#F4F6F8;margin-bottom:16px">
+    <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#0B132B"></span><span style="font-weight:600;color:#0B132B">Namba</span><span style="color:#A3ACB1">8:00</span>
+    <span style="color:#A3ACB1">— 45 min Kintetsu —</span>
+    <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#00C1A2"></span><span style="font-weight:600;color:#0B132B">Nara</span><span style="color:#A3ACB1">8:45</span>
+    <span style="color:#A3ACB1">— 45 min —</span>
+    <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#0B132B"></span><span style="font-weight:600;color:#0B132B">Osaka</span><span style="color:#A3ACB1">16:00</span>
+    <span style="color:#A3ACB1">— 10 min —</span>
+    <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#0B132B"></span><span style="font-weight:600;color:#0B132B">Namba</span><span style="color:#A3ACB1">17:00</span>
+  </div>
+
+  <div style="height:min(2.4in,36.9vw);border-radius:5px;overflow:hidden;box-shadow:0 4px 60px rgba(28,37,65,.05)"><img src="img/11.jpg" alt="Nara Park" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+  <div style="font-size:8pt;color:#A3ACB1;padding:6px 0 16px">Ochocientos ciervos sagrados libres. Las galletas shika senbei cuestan ¥200.</div>
+
+  <div style="display:grid;grid-template-columns:1.05in 1fr;gap:14px 16px;font-size:9.5pt;align-items:start">
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#0B132B;padding-top:2px">TRASLADO<br>8:00</div>
+    <div style="padding-bottom:14px;border-bottom:1px solid #EBEBEB">
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Namba → Nara</div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">Kintetsu Namba Station a Kintetsu Nara, Express, unos 45 min y ¥680. Más conveniente que el JR desde el hotel Plum. Sale cada 15 minutos.</div>
+    </div>
+
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#0B132B;padding-top:2px">EN NARA<br>9:00–15:00</div>
+    <div style="padding-bottom:14px;border-bottom:1px solid #EBEBEB">
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Nara Park <span style="font-size:8pt;font-weight:500;color:#00C1A2;letter-spacing:.08em">GRATIS</span></div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">Ochocientos ciervos libres que se inclinan pidiendo galletas, shika senbei ¥200. La experiencia más única del viaje.</div>
+      <div style="font-weight:600;color:#0B132B;margin-top:8px">Todai-ji <span style="font-size:8pt;font-weight:500;color:#5D79FF;letter-spacing:.08em">¥1,000</span></div>
+      <div style="font-weight:300;line-height:1.6">El templo de madera más grande del mundo, con el Gran Buda de 15 m. Almuerzo: kakinoha-zushi, la especialidad de Nara.</div>
+      <div style="font-weight:600;color:#0B132B;margin-top:8px">Kasuga Taisha <span style="font-size:8pt;font-weight:500;color:#00C1A2;letter-spacing:.08em">EXTERIOR GRATIS</span></div>
+      <div style="font-weight:300;line-height:1.6">Tres mil linternas de piedra cubiertas de musgo.</div>
+    </div>
+
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#0B132B;padding-top:2px">TARDE-NOCHE<br>16:00</div>
+    <div>
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Últimas compras en Namba y cena de despedida</div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">Don Quijote Namba, abierto 24 horas y tax-free: cosméticos, snacks, sake, whisky. Cena en Kani Doraku o kaiseki en Dotonbori.</div>
+      <div style="font-weight:300;font-style:italic;color:#A3ACB1;margin-top:6px">Última noche. Dotonbori por última vez: el ruido, las luces y el takoyaki quedarán grabados.</div>
+    </div>
+  </div>
+
+  <div style="margin-top:auto;padding-top:12px;border-top:1px solid #EBEBEB;display:flex;justify-content:space-between;font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#A3ACB1">
+    <span>DÍA 12 · NARA</span><span>23</span>
+  </div>
+</section>
+
+<section id="p24" data-screen-label="24 Día 13" style="scroll-margin-top:118px;border-radius:14px;box-shadow:0 6px 40px rgba(11,19,43,.10);padding:min(0.62in,4.8vw) min(0.64in,4.9vw) min(0.5in,3.8vw);display:flex;flex-direction:column;font-family:Inter,sans-serif;color:#172933;background:#fff;overflow:hidden">
+  <div style="display:flex;justify-content:space-between;align-items:baseline">
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.16em;color:#0B132B">OSAKA · DÍA 13 · JUE 29 OCT</div>
+    <div style="font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#0B132B;border:1px solid #0B132B;padding:2px 7px">CHECK-OUT 10:00 OBLIGATORIO</div>
+  </div>
+  <div style="font-family:Poppins,sans-serif;font-size:26pt;font-weight:700;color:#0B132B;line-height:1.1;margin:8px 0 16px">Compras finales y Aeropuerto Kansai</div>
+
+  <div style="display:grid;grid-template-columns:1.05in 1fr;gap:14px 16px;font-size:9.5pt;align-items:start">
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#0B132B;padding-top:2px">10:00</div>
+    <div style="padding-bottom:14px;border-bottom:1px solid #EBEBEB">
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Check-out del Plum Hotel</div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">Devolver la Suica en el aeropuerto: se recuperan los ¥500 del depósito más el saldo.</div>
+      <div style="font-weight:300;font-style:italic;color:#A3ACB1;margin-top:6px">Revisar el peso antes de salir del hotel: Air Canada permite 23 kg por adulto. Japón es peligroso para la báscula.</div>
+    </div>
+
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#0B132B;padding-top:2px">10:15</div>
+    <div style="padding-bottom:14px;border-bottom:1px solid #EBEBEB">
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Don Quijote Namba, compras finales</div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">A 5 minutos del hotel. Kit Kat de matcha, pocky raros, papas Calbee, SK-II, Shiseido, sake y whisky Nikka o Suntory.</div>
+    </div>
+
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.12em;color:#0B132B;padding-top:2px">AL AEROPUERTO</div>
+    <div>
+      <div style="font-weight:600;color:#0B132B;font-size:11pt">Nankai Rapi:t · Namba → KIX</div>
+      <div style="font-weight:300;line-height:1.6;margin-top:3px">La ruta más directa desde Namba: 45 min, ¥1,450 por persona, cada 30 minutos. <strong style="font-weight:600">Llegar tres horas antes del vuelo internacional.</strong></div>
+    </div>
+  </div>
+
+  <div style="height:min(2.3in,35.4vw);border-radius:5px;overflow:hidden;box-shadow:0 4px 60px rgba(28,37,65,.05);position:relative;margin-top:18px">
+    <image-slot id="jp-d13" shape="rounded" radius="5" placeholder="La última foto del viaje: los tres en el aeropuerto"></image-slot>
+  </div>
+
+  <div style="margin-top:18px;padding:16px 18px;background:#0B132B;color:#fff">
+    <div style="font-size:8pt;font-weight:500;letter-spacing:.16em;color:#53F3D7">またね</div>
+    <div style="font-family:Poppins,sans-serif;font-size:16pt;font-weight:700;margin-top:6px">Sayonara Japón</div>
+    <div style="font-size:9pt;font-weight:300;margin-top:4px">Trece días, tres ciudades, tres viajeros. Vuelos, hoteles, shinkansen, Skytree, TeamLab y Universal quedaron confirmados desde México.</div>
+  </div>
+
+  <div style="margin-top:auto;padding-top:12px;border-top:1px solid #EBEBEB;display:flex;justify-content:space-between;font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#A3ACB1">
+    <span>DÍA 13 · KANSAI Y VUELTA A CASA</span><span>24</span>
+  </div>
+</section>
+
+<section id="p25" data-screen-label="25 Notas" style="scroll-margin-top:118px;border-radius:14px;box-shadow:0 6px 40px rgba(11,19,43,.10);padding:min(0.62in,4.8vw) min(0.64in,4.9vw) min(0.5in,3.8vw);display:flex;flex-direction:column;font-family:Inter,sans-serif;color:#172933;background:#fff;overflow:hidden">
+  <div style="font-size:8pt;font-weight:500;letter-spacing:.16em;color:#5D79FF">DIARIO DE VIAJE</div>
+  <div style="font-family:Poppins,sans-serif;font-size:28pt;font-weight:700;color:#0B132B;line-height:1.05;margin:6px 0 6px">Notas</div>
+  <div style="font-size:9.5pt;font-weight:300;max-width:5in;margin-bottom:20px">Lo que se compró, lo que faltó, el nombre de ese ramen, el número del locker. Imprimir esta página dos veces.</div>
+
+  <div style="display:flex;flex-direction:column;gap:26px">
+    <div style="height:1px;background:#EBEBEB"></div>
+    <div style="height:1px;background:#EBEBEB"></div>
+    <div style="height:1px;background:#EBEBEB"></div>
+    <div style="height:1px;background:#EBEBEB"></div>
+    <div style="height:1px;background:#EBEBEB"></div>
+    <div style="height:1px;background:#EBEBEB"></div>
+    <div style="height:1px;background:#EBEBEB"></div>
+    <div style="height:1px;background:#EBEBEB"></div>
+    <div style="height:1px;background:#EBEBEB"></div>
+    <div style="height:1px;background:#EBEBEB"></div>
+    <div style="height:1px;background:#EBEBEB"></div>
+    <div style="height:1px;background:#EBEBEB"></div>
+    <div style="height:1px;background:#EBEBEB"></div>
+    <div style="height:1px;background:#EBEBEB"></div>
+    <div style="height:1px;background:#EBEBEB"></div>
+    <div style="height:1px;background:#EBEBEB"></div>
+    <div style="height:1px;background:#EBEBEB"></div>
+    <div style="height:1px;background:#EBEBEB"></div>
+  </div>
+
+  <div style="margin-top:24px;padding-top:14px;border-top:1px solid #0B132B;display:grid;grid-template-columns:1fr 1fr;gap:16px;font-size:8.5pt">
+    <div style="font-weight:300;line-height:1.7"><strong style="font-weight:600;color:#0B132B">Familia Pano Hernandez</strong><br>Japón · 17–29 de octubre de 2026 · 3 viajeros · 13 días</div>
+    <div style="font-weight:300;line-height:1.7;text-align:right;color:#A3ACB1">Fotos de Wikimedia Commons, licencias CC. Los espacios vacíos son para las fotos propias.<br>Pendiente único: Shibuya Sky, reservar alrededor del 6 de octubre.</div>
+  </div>
+
+  <div style="margin-top:auto;padding-top:12px;border-top:1px solid #EBEBEB;display:flex;justify-content:space-between;font-size:7.5pt;font-weight:500;letter-spacing:.1em;color:#A3ACB1">
+    <span>NOTAS</span><span>25</span>
+  </div>
+</section>
+</main>
+
+<nav style="position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;justify-content:center;pointer-events:none;padding:0 12px calc(12px + env(safe-area-inset-bottom))">
+  <div style="pointer-events:auto;display:grid;grid-template-columns:repeat(5,1fr);gap:2px;width:100%;max-width:560px;background:rgba(11,19,43,.97);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:6px;font-family:Inter,sans-serif;box-shadow:0 8px 40px rgba(0,0,0,.35)">
+    <a data-nav="true" href="#p02" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:52px;border-radius:9px;text-decoration:none;color:#fff;font-size:10px;font-weight:500;letter-spacing:.06em"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h10"></path></svg>Índice</a>
+    <a data-nav="true" href="#p03" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:52px;border-radius:9px;text-decoration:none;color:#fff;font-size:10px;font-weight:500;letter-spacing:.06em"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14v16l-7-3-7 3z"></path></svg>Reservas</a>
+    <button data-nav="true" onClick="{{ goToday }}" style="appearance:none;border:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:52px;border-radius:9px;background:#53F3D7;color:#0B132B;font-family:Inter,sans-serif;font-size:10px;font-weight:700;letter-spacing:.06em"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2"></rect><path d="M8 3v4M16 3v4M3.5 10h17"></path></svg>Hoy</button>
+    <a data-nav="true" href="#p04" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:52px;border-radius:9px;text-decoration:none;color:#fff;font-size:10px;font-weight:500;letter-spacing:.06em"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16v12H4z"></path><path d="M4 11h16"></path></svg>Gastos</a>
+    <a data-nav="true" href="#p25" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:52px;border-radius:9px;text-decoration:none;color:#fff;font-size:10px;font-weight:500;letter-spacing:.06em"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18H6z"></path><path d="M9 8h6M9 12h6M9 16h4"></path></svg>Notas</a>
+  </div>
+</nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;autoJumpToday&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Comportamiento&quot;},&quot;demoDate&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Comportamiento&quot;}}">
+const DAYS = [{"n":1,"date":17,"page":"p08","city":"Tokio","title":"Llegada a Haneda"},{"n":2,"date":18,"page":"p09","city":"Tokio","title":"Asakusa · Ueno · Skytree"},{"n":3,"date":19,"page":"p10","city":"Tokio","title":"Meiji · Harajuku · Shinjuku"},{"n":4,"date":20,"page":"p11","city":"Tokio","title":"TeamLab · Tsukiji · Shibuya Sky"},{"n":5,"date":21,"page":"p12","city":"Tokio → Kioto","title":"Nozomi y Gion de noche"},{"n":6,"date":22,"page":"p15","city":"Kioto","title":"Fushimi Inari al alba"},{"n":7,"date":23,"page":"p16","city":"Kioto","title":"Arashiyama y Kinkaku-ji"},{"n":8,"date":24,"page":"p17","city":"Kioto → Osaka","title":"Tren y Dotonbori"},{"n":9,"date":25,"page":"p20","city":"Osaka","title":"Castillo y Shinsekai"},{"n":10,"date":26,"page":"p21","city":"Osaka","title":"Umeda y compras"},{"n":11,"date":27,"page":"p22","city":"Osaka","title":"Universal Studios Japan"},{"n":12,"date":28,"page":"p23","city":"Osaka","title":"Nara"},{"n":13,"date":29,"page":"p24","city":"Osaka","title":"Kansai y vuelta a casa"}];
+
+class Component extends DCLogic {
+  refDate() {
+    const s = (this.props.demoDate || '').trim();
+    if (/^\d{4}-\d{2}-\d{2}$/.test(s)) {
+      const p = s.split('-').map(Number);
+      return new Date(p[0], p[1] - 1, p[2]);
+    }
+    return new Date();
+  }
+  todayDay() {
+    const n = this.refDate();
+    if (n.getFullYear() === 2026 && n.getMonth() === 9) {
+      const hit = DAYS.filter(function (x) { return x.date === n.getDate(); })[0];
+      if (hit) return hit;
+    }
+    return null;
+  }
+  daysToStart() {
+    const n = this.refDate();
+    const a = new Date(n.getFullYear(), n.getMonth(), n.getDate());
+    return Math.round((new Date(2026, 9, 17) - a) / 86400000);
+  }
+  targetPage() {
+    const t = this.todayDay();
+    if (t) return t.page;
+    return this.daysToStart() > 0 ? 'p08' : 'p24';
+  }
+  jump(page, smooth) {
+    const el = document.getElementById(page);
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.scrollY - 112;
+    window.scrollTo({ top: Math.max(0, top), behavior: smooth ? 'smooth' : 'auto' });
+  }
+  componentDidMount() {
+    const t = this.todayDay();
+    if (!t) return;
+    const sec = document.getElementById(t.page);
+    if (sec) sec.setAttribute('data-today', 'true');
+    const row = document.querySelector('a[href="#' + t.page + '"][style*="border-bottom"]');
+    if (row) row.setAttribute('data-today', 'true');
+    if ((this.props.autoJumpToday ?? true) && !window.location.hash) {
+      setTimeout(() => this.jump(t.page, false), 150);
+    }
+  }
+  renderVals() {
+    const t = this.todayDay();
+    const left = this.daysToStart();
+    return {
+      days: DAYS.map(function (d) {
+        return { n: d.n, date: d.date, page: d.page, isToday: !!t && t.n === d.n };
+      }),
+      goToday: () => this.jump(this.targetPage(), true),
+      chipLabel: t ? 'HOY · DÍA ' + t.n : (left > 0 ? 'FALTAN ' + left + ' DÍAS' : 'VIAJE TERMINADO'),
+      ctaLabel: t ? 'Ir al día de hoy · Día ' + t.n : (left > 0 ? 'Empezar por el Día 1' : 'Ver el último día'),
+      statusLabel: t
+        ? t.city + ' · ' + t.date + ' oct · ' + t.title
+        : (left > 0 ? 'Faltan ' + left + ' días para Haneda' : 'De vuelta en casa')
+    };
+  }
+}
+</script>
+</body>
+</html>

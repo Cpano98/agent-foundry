@@ -1,0 +1,53 @@
+/* Palette transcribed from the 7-swatch row on the Posts and Logo-Icon
+   pages of CpanoWebDev.fig (7 x 180px squares, node 39:149-39:155). */
+:root {
+  --cp-black: #000000;
+  --cp-navy: #0B132B;
+  --cp-navy-mid: #1C2541;
+  --cp-blue: #5D79FF;
+  --cp-teal: #00C1A2;
+  --cp-mint: #53F3D7;
+  --cp-aqua: #00FBCA;
+  --cp-white: #FFFFFF;
+
+  /* neutrals observed in the file */
+  --cp-grey-100: #EBEBEB;
+  --cp-grey-200: #D9D9D9;
+  --cp-grey-400: #A3ACB1;
+  --cp-ink-700: #172933;
+
+  /* semantic */
+  --text-primary: var(--cp-navy);
+  --text-secondary: var(--cp-ink-700);
+  --text-muted: var(--cp-grey-400);
+  --text-on-dark: var(--cp-white);
+  --text-accent: var(--cp-mint);
+  --link: var(--cp-blue);
+  --link-hover: var(--cp-teal);
+
+  --surface-page: var(--cp-white);
+  --surface-inverse: var(--cp-navy);
+  --surface-panel: var(--cp-navy-mid);
+  --surface-placeholder: var(--cp-grey-200);
+  --surface-glass: rgba(255, 255, 255, 0.1);
+  --surface-glass-strong: rgba(255, 255, 255, 0.5);
+
+  --accent: var(--cp-mint);
+  --accent-alt: var(--cp-blue);
+  --accent-deep: var(--cp-teal);
+  --accent-bright: var(--cp-aqua);
+
+  --border-hairline: rgba(255, 255, 255, 0.2);
+  --border-device: #4A5568;
+
+  /* device-chrome literals, kept out of the brand palette */
+  --chrome-lid: #1A202C;
+  --chrome-label: #A0AEC0;
+  --chrome-base-light: #CAD4DB;
+  --chrome-base-mid: #A3ACB1;
+  --chrome-base-dark: #242729;
+  --chrome-base-black: #0D1012;
+  --chrome-curve-top: #7A7F83;
+  --chrome-curve-bottom: #0B0B0E;
+  --chrome-groove: #96A1A8;
+}

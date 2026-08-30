@@ -1,0 +1,413 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/brand/**",
+              "components/devices/**",
+              "components/icon/**",
+              "components/showcase/**",
+              "components/social/**",
+              "components/surfaces/**",
+              "ui_kits/brand-sheets/**",
+              "ui_kits/project-showcase/**",
+              "ui_kits/social-posts/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Inter|Poppins|Urbanist))/i]",
+        "message": "Font not provided by the design system. Available: Inter, Poppins, Urbanist."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='GlassPanel'] > JSXAttribute > JSXIdentifier[name!=/^(?:blur|tint|children|key|ref|className|style|children)$/]",
+        "message": "<GlassPanel> doesn't accept that prop. Declared props: blur, tint, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='GlowOrb'] > JSXAttribute > JSXIdentifier[name!=/^(?:size|tone|key|ref|className|style|children)$/]",
+        "message": "<GlowOrb> doesn't accept that prop. Declared props: size, tone."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='GlowOrb'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:mint|blue|aqua|grey)$/]",
+        "message": "<GlowOrb> tone must be one of 'mint' | 'blue' | 'aqua' | 'grey'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Icon'] > JSXAttribute > JSXIdentifier[name!=/^(?:name|size|key|ref|className|style|children)$/]",
+        "message": "<Icon> doesn't accept that prop. Declared props: name, size."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='LogoLockup'] > JSXAttribute > JSXIdentifier[name!=/^(?:width|color|key|ref|className|style|children)$/]",
+        "message": "<LogoLockup> doesn't accept that prop. Declared props: width, color."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='LogoMark'] > JSXAttribute > JSXIdentifier[name!=/^(?:size|color|boxed|boxColor|key|ref|className|style|children)$/]",
+        "message": "<LogoMark> doesn't accept that prop. Declared props: size, color, boxed, boxColor."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='MacbookFrame'] > JSXAttribute > JSXIdentifier[name!=/^(?:width|src|alt|label|key|ref|className|style|children)$/]",
+        "message": "<MacbookFrame> doesn't accept that prop. Declared props: width, src, alt, label."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='PatternField'] > JSXAttribute > JSXIdentifier[name!=/^(?:tone|scale|assetBase|children|key|ref|className|style|children)$/]",
+        "message": "<PatternField> doesn't accept that prop. Declared props: tone, scale, assetBase, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='PatternField'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:navy|blue|mint)$/]",
+        "message": "<PatternField> tone must be one of 'navy' | 'blue' | 'mint'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='PostCanvas'] > JSXAttribute > JSXIdentifier[name!=/^(?:size|ground|orbs|mark|padded|children|key|ref|className|style|children)$/]",
+        "message": "<PostCanvas> doesn't accept that prop. Declared props: size, ground, orbs, mark, padded, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ProPreview'] > JSXAttribute > JSXIdentifier[name!=/^(?:width|backdrop|markCorner|children|key|ref|className|style|children)$/]",
+        "message": "<ProPreview> doesn't accept that prop. Declared props: width, backdrop, markCorner, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ProPreview'] > JSXAttribute[name.name='markCorner'] > Literal[value!=/^(?:left|right)$/]",
+        "message": "<ProPreview> markCorner must be one of 'left' | 'right'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ScreenIPhone12Pro'] > JSXAttribute > JSXIdentifier[name!=/^(?:width|src|alt|notch|key|ref|className|style|children)$/]",
+        "message": "<ScreenIPhone12Pro> doesn't accept that prop. Declared props: width, src, alt, notch."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ScreenshotCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:src|alt|width|height|ratio|key|ref|className|style|children)$/]",
+        "message": "<ScreenshotCard> doesn't accept that prop. Declared props: src, alt, width, height, ratio."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SocialMediaFacebook'] > JSXAttribute > JSXIdentifier[name!=/^(?:size|color|key|ref|className|style|children)$/]",
+        "message": "<SocialMediaFacebook> doesn't accept that prop. Declared props: size, color."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SocialMediaInstagram'] > JSXAttribute > JSXIdentifier[name!=/^(?:size|color|key|ref|className|style|children)$/]",
+        "message": "<SocialMediaInstagram> doesn't accept that prop. Declared props: size, color."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SocialMediaTikTok'] > JSXAttribute > JSXIdentifier[name!=/^(?:size|color|key|ref|className|style|children)$/]",
+        "message": "<SocialMediaTikTok> doesn't accept that prop. Declared props: size, color."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SocialMediaTwitter'] > JSXAttribute > JSXIdentifier[name!=/^(?:size|color|key|ref|className|style|children)$/]",
+        "message": "<SocialMediaTwitter> doesn't accept that prop. Declared props: size, color."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SocialMediaWhatsapp'] > JSXAttribute > JSXIdentifier[name!=/^(?:size|color|key|ref|className|style|children)$/]",
+        "message": "<SocialMediaWhatsapp> doesn't accept that prop. Declared props: size, color."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SwatchTile'] > JSXAttribute > JSXIdentifier[name!=/^(?:color|size|label|hex|key|ref|className|style|children)$/]",
+        "message": "<SwatchTile> doesn't accept that prop. Declared props: color, size, label, hex."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Wordmark'] > JSXAttribute > JSXIdentifier[name!=/^(?:width|color|key|ref|className|style|children)$/]",
+        "message": "<Wordmark> doesn't accept that prop. Declared props: width, color."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "GlassPanel": {
+        "replaces": []
+      },
+      "GlowOrb": {
+        "replaces": []
+      },
+      "Icon": {
+        "replaces": []
+      },
+      "LogoLockup": {
+        "replaces": []
+      },
+      "LogoMark": {
+        "replaces": []
+      },
+      "MacbookFrame": {
+        "replaces": []
+      },
+      "PatternField": {
+        "replaces": []
+      },
+      "PostCanvas": {
+        "replaces": []
+      },
+      "ProPreview": {
+        "replaces": []
+      },
+      "ScreenIPhone12Pro": {
+        "replaces": []
+      },
+      "ScreenshotCard": {
+        "replaces": []
+      },
+      "SocialMediaFacebook": {
+        "replaces": []
+      },
+      "SocialMediaInstagram": {
+        "replaces": []
+      },
+      "SocialMediaTikTok": {
+        "replaces": []
+      },
+      "SocialMediaTwitter": {
+        "replaces": []
+      },
+      "SocialMediaWhatsapp": {
+        "replaces": []
+      },
+      "SwatchTile": {
+        "replaces": []
+      },
+      "Wordmark": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--accent",
+      "--accent-alt",
+      "--accent-bright",
+      "--accent-deep",
+      "--blur-glass",
+      "--border-device",
+      "--border-hairline",
+      "--canvas-post",
+      "--canvas-preview-h",
+      "--canvas-preview-w",
+      "--canvas-wide-h",
+      "--canvas-wide-w",
+      "--chrome-base-black",
+      "--chrome-base-dark",
+      "--chrome-base-light",
+      "--chrome-base-mid",
+      "--chrome-curve-bottom",
+      "--chrome-curve-top",
+      "--chrome-groove",
+      "--chrome-label",
+      "--chrome-lid",
+      "--cp-aqua",
+      "--cp-black",
+      "--cp-blue",
+      "--cp-grey-100",
+      "--cp-grey-200",
+      "--cp-grey-400",
+      "--cp-ink-700",
+      "--cp-mint",
+      "--cp-navy",
+      "--cp-navy-mid",
+      "--cp-teal",
+      "--cp-white",
+      "--duration-base",
+      "--duration-fast",
+      "--ease-brand",
+      "--font-alt",
+      "--font-core",
+      "--font-display",
+      "--glow-aqua",
+      "--glow-blue",
+      "--glow-grey",
+      "--glow-mint",
+      "--leading-body",
+      "--leading-label",
+      "--leading-tight",
+      "--link",
+      "--link-hover",
+      "--margin-safe",
+      "--pattern-blue",
+      "--pattern-mint",
+      "--pattern-navy",
+      "--radius-device",
+      "--radius-full",
+      "--radius-lg",
+      "--radius-sm",
+      "--radius-xs",
+      "--shadow-card",
+      "--shadow-deep",
+      "--shadow-device",
+      "--shadow-drop",
+      "--shadow-soft",
+      "--space-1",
+      "--space-2",
+      "--space-3",
+      "--space-4",
+      "--space-5",
+      "--space-6",
+      "--space-7",
+      "--space-8",
+      "--space-9",
+      "--surface-glass",
+      "--surface-glass-strong",
+      "--surface-inverse",
+      "--surface-page",
+      "--surface-panel",
+      "--surface-placeholder",
+      "--text-accent",
+      "--text-muted",
+      "--text-on-dark",
+      "--text-primary",
+      "--text-secondary",
+      "--type-banner",
+      "--type-body",
+      "--type-display",
+      "--type-h1",
+      "--type-h2",
+      "--type-h3",
+      "--type-h4",
+      "--type-h5",
+      "--type-h6",
+      "--type-hero",
+      "--type-label",
+      "--type-poster",
+      "--type-title",
+      "--weight-bold",
+      "--weight-extrabold",
+      "--weight-light",
+      "--weight-medium",
+      "--weight-regular",
+      "--weight-semibold"
+    ],
+    "tokenKinds": {
+      "--cp-black": "color",
+      "--cp-navy": "color",
+      "--cp-navy-mid": "color",
+      "--cp-blue": "color",
+      "--cp-teal": "color",
+      "--cp-mint": "color",
+      "--cp-aqua": "color",
+      "--cp-white": "color",
+      "--cp-grey-100": "color",
+      "--cp-grey-200": "color",
+      "--cp-grey-400": "color",
+      "--cp-ink-700": "color",
+      "--text-primary": "font",
+      "--text-secondary": "font",
+      "--text-muted": "font",
+      "--text-on-dark": "font",
+      "--text-accent": "font",
+      "--link": "color",
+      "--link-hover": "color",
+      "--surface-page": "color",
+      "--surface-inverse": "color",
+      "--surface-panel": "color",
+      "--surface-placeholder": "color",
+      "--surface-glass": "color",
+      "--surface-glass-strong": "color",
+      "--accent": "color",
+      "--accent-alt": "color",
+      "--accent-deep": "color",
+      "--accent-bright": "color",
+      "--border-hairline": "color",
+      "--border-device": "color",
+      "--chrome-lid": "color",
+      "--chrome-label": "color",
+      "--chrome-base-light": "color",
+      "--chrome-base-mid": "color",
+      "--chrome-base-dark": "color",
+      "--chrome-base-black": "color",
+      "--chrome-curve-top": "color",
+      "--chrome-curve-bottom": "color",
+      "--chrome-groove": "color",
+      "--font-core": "font",
+      "--font-display": "font",
+      "--font-alt": "font",
+      "--type-poster": "font",
+      "--type-banner": "font",
+      "--type-hero": "font",
+      "--type-display": "font",
+      "--type-title": "font",
+      "--type-h1": "font",
+      "--type-h2": "font",
+      "--type-h3": "font",
+      "--type-h4": "font",
+      "--type-h5": "font",
+      "--type-h6": "font",
+      "--type-body": "font",
+      "--type-label": "font",
+      "--weight-light": "font",
+      "--weight-regular": "font",
+      "--weight-medium": "font",
+      "--weight-semibold": "font",
+      "--weight-bold": "font",
+      "--weight-extrabold": "font",
+      "--leading-tight": "font",
+      "--leading-label": "font",
+      "--leading-body": "font",
+      "--space-1": "spacing",
+      "--space-2": "spacing",
+      "--space-3": "spacing",
+      "--space-4": "spacing",
+      "--space-5": "spacing",
+      "--space-6": "spacing",
+      "--space-7": "spacing",
+      "--space-8": "spacing",
+      "--space-9": "spacing",
+      "--canvas-post": "spacing",
+      "--canvas-preview-w": "spacing",
+      "--canvas-preview-h": "spacing",
+      "--canvas-wide-w": "spacing",
+      "--canvas-wide-h": "spacing",
+      "--margin-safe": "spacing",
+      "--radius-xs": "radius",
+      "--radius-sm": "radius",
+      "--radius-lg": "radius",
+      "--radius-device": "radius",
+      "--radius-full": "radius",
+      "--shadow-card": "shadow",
+      "--shadow-soft": "shadow",
+      "--shadow-drop": "shadow",
+      "--shadow-device": "shadow",
+      "--shadow-deep": "shadow",
+      "--blur-glass": "spacing",
+      "--glow-mint": "color",
+      "--glow-blue": "color",
+      "--glow-aqua": "color",
+      "--glow-grey": "color",
+      "--pattern-navy": "other",
+      "--pattern-blue": "other",
+      "--pattern-mint": "other",
+      "--ease-brand": "other",
+      "--duration-fast": "other",
+      "--duration-base": "other"
+    },
+    "fontFamilies": [
+      "Inter",
+      "Poppins",
+      "Urbanist"
+    ]
+  }
+}
