@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ExpoSecurityAssessmentReport",
+  "type": "object",
+  "properties": {
+    "scan_metadata": {
+      "type": "object",
+      "properties": {
+        "repository_name": { "type": "string" },
+        "target_platforms": {
+          "type": "array",
+          "items": { "type": "string", "enum": ["ios", "android", "web"] }
+        },
+        "expo_sdk_version": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["repository_name", "target_platforms", "timestamp"]
+    },
+    "vulnerabilities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "pattern": "^VULN-EXPO-[0-9]{4}$" },
+          "title": { "type": "string" },
+          "owasp_masvs_category": { "type": "string" },
+          "cwe_id": { "type": "string" },
+          "cvss_v4_score": { "type": "number", "minimum": 0.0, "maximum": 10.0 },
+          "cvss_vector": { "type": "string" },
+          "severity": { "type": "string", "enum": ["CRITICAL", "HIGH", "MEDIUM", "LOW", "INFO"] },
+          "affected_location": {
+            "type": "object",
+            "properties": {
+              "file_path": { "type": "string" },
+              "start_line": { "type": "integer" },
+              "end_line": { "type": "integer" },
+              "code_snippet": { "type": "string" }
+            },
+            "required": ["file_path", "start_line", "end_line"]
+          },
+          "attack_vector_description": { "type": "string" },
+          "dynamic_proof_of_concept": { "type": "string" },
+          "remediation_plan": {
+            "type": "object",
+            "properties": {
+              "explanation": { "type": "string" },
+              "unified_diff": { "type": "string" },
+              "re_test_status": { "type": "string", "enum": ["VERIFIED_FIXED", "PARTIALLY_FIXED", "FAILED"] }
+            },
+            "required": ["explanation", "unified_diff", "re_test_status"]
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "owasp_masvs_category",
+          "cwe_id",
+          "cvss_v4_score",
+          "severity",
+          "affected_location",
+          "attack_vector_description",
+          "remediation_plan"
+        ]
+      }
+    },
+    "executive_summary": {
+      "type": "object",
+      "properties": {
+        "total_vulnerabilities": { "type": "integer" },
+        "critical_count": { "type": "integer" },
+        "high_count": { "type": "integer" },
+        "medium_count": { "type": "integer" },
+        "low_count": { "type": "integer" },
+        "overall_risk_rating": { "type": "string" }
+      },
+      "required": ["total_vulnerabilities", "critical_count", "high_count", "medium_count", "low_count", "overall_risk_rating"]
+    }
+  },
+  "required": ["scan_metadata", "vulnerabilities", "executive_summary"]
+}

@@ -135,9 +135,15 @@ for (const skillDir of skillDirs) {
   validateSkillDir(skillDir);
 }
 
-const pluginSkillDirs = collectSkillDirsFrom(path.join(root, 'plugins', 'agent-foundry-core', 'skills'));
-for (const skillDir of pluginSkillDirs) {
-  validateSkillDir(skillDir);
+const pluginsDir = path.join(root, 'plugins');
+if (fs.existsSync(pluginsDir)) {
+  for (const entry of fs.readdirSync(pluginsDir, { withFileTypes: true })) {
+    if (!entry.isDirectory()) continue;
+    const pluginSkillDirs = collectSkillDirsFrom(path.join(pluginsDir, entry.name, 'skills'));
+    for (const skillDir of pluginSkillDirs) {
+      validateSkillDir(skillDir);
+    }
+  }
 }
 
 const docsDir = path.join(root, 'docs');

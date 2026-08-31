@@ -1,0 +1,16 @@
+{
+  "name": "app-security-analyzer",
+  "version": "0.1.0",
+  "description": "Autonomous application security analyzer for mobile and cross-platform apps — native Android/iOS plus React Native / Expo (incl. Expo web). Twelve MASVS v2 / MASTG audit and planning skills wrapped in an orchestrated SAST + DAST pipeline with CVSS v4.0 scoring, unified-diff remediation, and a re-verification loop, emitting one strict JSON assessment report.",
+  "author": {
+    "name": "Cpano98",
+    "url": "https://github.com/Cpano98"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/Cpano98/agent-foundry",
+  "homepage": "https://github.com/Cpano98/agent-foundry",
+  "compatibility": {
+    "claude-code": ">=1.0.0",
+    "agent-skills": ">=1.0.0"
+  }
+}

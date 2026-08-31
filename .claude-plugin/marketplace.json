@@ -39,6 +39,12 @@
       "source": "./plugins/travel-planner",
       "version": "0.1.0",
       "description": "A 4-phase travel planning pipeline — Research → Itinerary → Budget → HTML Guide — producing a polished, print-ready day-by-day travel guide using Carlos Pano's design system."
+    },
+    {
+      "name": "app-security-analyzer",
+      "source": "./plugins/app-security-analyzer",
+      "version": "0.1.0",
+      "description": "Autonomous application security analyzer for mobile and cross-platform apps (native Android/iOS + React Native / Expo, incl. Expo web) — 12 MASVS v2 / MASTG audit and planning skills in an orchestrated SAST + DAST pipeline with CVSS v4.0 scoring, unified-diff remediation, and a re-verification loop, emitting one strict JSON assessment report."
     }
   ]
 }
